@@ -1,0 +1,16 @@
+.gitignore
+README.md
+api.module.ts
+api/api.ts
+api/metrics.service.ts
+api/plugins.service.ts
+configuration.ts
+encoder.ts
+git_push.sh
+index.ts
+model/metrics.ts
+model/models.ts
+model/pluginId.ts
+model/pluginInfo.ts
+param.ts
+variables.ts

@@ -1,25 +1,27 @@
 import { EntityManager } from '@mikro-orm/mariadb';
 import { Injectable } from '@nestjs/common';
 import { PluginInfo } from 'src/api/plugins/models/PluginInfo';
-import { PLUGINS_TABLE_NAME } from 'src/db/entities/Plugin';
+import { Plugin, PLUGINS_TABLE_NAME } from 'src/db/entities/Plugin';
+
+type PluginDbSelectType = Pick<Plugin, 'id' | 'name' | 'description' | 'version' | 'url'> & { isInstalled: number; isActivated: number };
 
 @Injectable()
 export class PluginsRepository {
 	public async getPluginList(entityManager: EntityManager): Promise<Array<PluginInfo>> {
 		const query = `SELECT id, name, description, version, url, isActivated, isInstalled FROM ${PLUGINS_TABLE_NAME}`;
 
-		const [rows] = await entityManager.getKnex().raw<[Array<PluginInfo>]>(query);
+		const [rows] = await entityManager.getKnex().raw<[Array<PluginDbSelectType>]>(query);
 
-		return rows ?? [];
+		return rows?.map((row) => ({ ...row, isInstalled: row.isInstalled === 1, isActivated: row.isActivated === 1 })) ?? [];
 	}
 
 	public async getPluginInfo(entityManager: EntityManager, pluginId: string): Promise<PluginInfo | undefined> {
 		const query = `SELECT id, name, description, version, url, isActivated, isInstalled FROM ${PLUGINS_TABLE_NAME} WHERE id = :id`;
 		const params = { id: pluginId };
 
-		const [rows] = await entityManager.getKnex().raw<[Array<PluginInfo>]>(query, params);
+		const [rows] = await entityManager.getKnex().raw<[Array<PluginDbSelectType>]>(query, params);
 
-		return (rows ?? [])[0];
+		return (rows?.map((row) => ({ ...row, isInstalled: row.isInstalled === 1, isActivated: row.isActivated === 1 })) ?? [])[0];
 	}
 
 	public async getIsInstalled(entityManager: EntityManager, pluginId: string): Promise<boolean | undefined> {

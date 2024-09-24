@@ -1,4 +1,3 @@
-*
-!package.json
-!.gitignore
-!.openapi-generator-ignore
+node_modules
+.angular
+dist

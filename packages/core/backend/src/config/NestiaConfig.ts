@@ -16,6 +16,7 @@ const NESTIA_CONFIG: INestiaConfig = {
 				identifier: 'MIT',
 			},
 		},
+		servers: [{ url: '/api', description: 'localhost' }],
 		operationId: (props) => props.function,
 	},
 };
