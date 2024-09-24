@@ -1,0 +1,16 @@
+{
+	"name": "@pihub/core",
+	"version": "0.0.1",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"repository": "git+https://github.com/stad-nico/pihub",
+		"directory": "packages/core"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
