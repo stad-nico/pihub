@@ -11,7 +11,7 @@
 	"description": "",
 	"dependencies": {
 		"@angular/core": "^18.2.5",
-		"@pihub/openapi": "^0.0.1",
+		"@pihub/openapi": "^0.0.2",
 		"rxjs": "^7.8.1"
 	},
 	"repository": {

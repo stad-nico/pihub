@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Metrics, MetricsService } from '@pihub/openapi/generated';
+import { Metrics, MetricsService } from '@pihub/openapi';
 
 @Injectable({ providedIn: 'root' })
 export class MetricsAPIService {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { PluginInfo, PluginsService } from '@pihub/openapi/generated';
+import { PluginInfo, PluginsService } from '@pihub/openapi';
 
 @Injectable({ providedIn: 'root' })
 export class PluginsAPIService {
