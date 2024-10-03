@@ -12,5 +12,7 @@ model/metrics.ts
 model/models.ts
 model/pluginId.ts
 model/pluginInfo.ts
+model/streamableFile.ts
+model/streamableFileOptions.ts
 param.ts
 variables.ts

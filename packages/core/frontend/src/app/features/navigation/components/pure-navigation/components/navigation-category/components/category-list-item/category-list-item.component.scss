@@ -1,0 +1,71 @@
+:host {
+	height: 40px;
+
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 4px;
+
+	padding-left: 12px;
+
+	border-radius: 14px;
+
+	transition: all 0.3s ease;
+
+	&:hover {
+		cursor: pointer;
+
+		background-color: var(--color-background-800);
+
+		> .title {
+			color: var(--color-primary-500);
+		}
+
+		> icon {
+			fill: var(--color-primary-500);
+			stroke: var(--color-primary-500);
+		}
+	}
+
+	&:not(:last-of-type) {
+		margin-bottom: 2px;
+	}
+
+	&.navigation-collapsed {
+		width: 40px;
+
+		padding-left: 10px;
+		padding-right: 10px;
+
+		> .title {
+			width: 0;
+
+			opacity: 0;
+		}
+	}
+
+	> .title {
+		font-family: 'Satoshi Medium';
+		font-size: 1rem;
+
+		color: var(--color-tertiary-500);
+
+		user-select: none;
+
+		white-space: nowrap;
+
+		transition: color 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+	}
+
+	> icon {
+		flex-shrink: 0;
+
+		width: 20px;
+		height: 20px;
+
+		fill: var(--color-tertiary-500);
+		stroke: var(--color-tertiary-500);
+
+		transition: fill 0.3s ease;
+	}
+}

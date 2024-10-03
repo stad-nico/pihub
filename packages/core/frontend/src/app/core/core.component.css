@@ -1,0 +1,19 @@
+main {
+	display: flex;
+}
+
+.installed-plugins {
+	width: 50%;
+	border: 1px solid red;
+}
+
+.available-plugins {
+	width: 50%;
+	border: 1px solid black;
+}
+
+.plugin {
+	background-color: grey;
+	padding: 20px;
+	margin-bottom: 5px;
+}

@@ -10,6 +10,8 @@
 		"noFallthroughCasesInSwitch": true,
 		"skipLibCheck": true,
 		"esModuleInterop": true,
+		"baseUrl": ".",
+		"sourceRoot": "src",
 		"sourceMap": true,
 		"declaration": false,
 		"experimentalDecorators": true,

@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { PluginInfo } from 'src/api/plugins/models/PluginInfo';
 import { Plugin, PLUGINS_TABLE_NAME } from 'src/db/entities/Plugin';
 
-type PluginDbSelectType = Pick<Plugin, 'id' | 'name' | 'description' | 'version' | 'url'> & { isInstalled: number; isActivated: number };
+type PluginDbSelectType = Pick<Plugin, 'id' | 'name' | 'description' | 'version' | 'url'> & { isInstalled: number /*; isActivated: number*/ };
 
 @Injectable()
 export class PluginsRepository {
@@ -12,7 +12,7 @@ export class PluginsRepository {
 
 		const [rows] = await entityManager.getKnex().raw<[Array<PluginDbSelectType>]>(query);
 
-		return rows?.map((row) => ({ ...row, isInstalled: row.isInstalled === 1, isActivated: row.isActivated === 1 })) ?? [];
+		return rows?.map((row) => ({ ...row, isInstalled: row.isInstalled === 1 /*, isActivated: row.isActivated === 1*/ })) ?? [];
 	}
 
 	public async getPluginInfo(entityManager: EntityManager, pluginId: string): Promise<PluginInfo | undefined> {
@@ -21,7 +21,7 @@ export class PluginsRepository {
 
 		const [rows] = await entityManager.getKnex().raw<[Array<PluginDbSelectType>]>(query, params);
 
-		return (rows?.map((row) => ({ ...row, isInstalled: row.isInstalled === 1, isActivated: row.isActivated === 1 })) ?? [])[0];
+		return (rows?.map((row) => ({ ...row, isInstalled: row.isInstalled === 1 /*, isActivated: row.isActivated === 1*/ })) ?? [])[0];
 	}
 
 	public async getIsInstalled(entityManager: EntityManager, pluginId: string): Promise<boolean | undefined> {
@@ -40,19 +40,19 @@ export class PluginsRepository {
 		await entityManager.getKnex().raw(query, params);
 	}
 
-	public async getIsActivated(entityManager: EntityManager, pluginId: string): Promise<boolean | undefined> {
-		const query = `SELECT isActivated FROM ${PLUGINS_TABLE_NAME} WHERE id = :id`;
-		const params = { id: pluginId };
+	// public async getIsActivated(entityManager: EntityManager, pluginId: string): Promise<boolean | undefined> {
+	// 	const query = `SELECT isActivated FROM ${PLUGINS_TABLE_NAME} WHERE id = :id`;
+	// 	const params = { id: pluginId };
 
-		const [rows] = await entityManager.getKnex().raw<[Array<Pick<PluginInfo, 'isActivated'>>]>(query, params);
+	// 	const [rows] = await entityManager.getKnex().raw<[Array<Pick<PluginInfo, 'isActivated'>>]>(query, params);
 
-		return (rows ?? [])[0]?.isActivated;
-	}
+	// 	return (rows ?? [])[0]?.isActivated;
+	// }
 
-	public async setIsActivated(entityManager: EntityManager, pluginId: string, isActivated: boolean): Promise<void> {
-		const query = `UPDATE ${PLUGINS_TABLE_NAME} SET isActivated = :isActivated WHERE id = :id`;
-		const params = { isActivated: isActivated, id: pluginId };
+	// public async setIsActivated(entityManager: EntityManager, pluginId: string, isActivated: boolean): Promise<void> {
+	// 	const query = `UPDATE ${PLUGINS_TABLE_NAME} SET isActivated = :isActivated WHERE id = :id`;
+	// 	const params = { isActivated: isActivated, id: pluginId };
 
-		await entityManager.getKnex().raw(query, params);
-	}
+	// 	await entityManager.getKnex().raw(query, params);
+	// }
 }

@@ -1,0 +1,13 @@
+<header>
+	<icon [url]="'assets/icons/pihub.svg'"></icon>
+	<p class="title">PiHub</p>
+</header>
+<main>
+	@for (category of categories; track category) {
+	<navigation-category [data]="category" [isNavigationCollapsed]="isCollapsed"></navigation-category>
+	}
+</main>
+<footer>
+	<p class="author">by Nicolas Stadler</p>
+	<p class="version">v0.0.0</p>
+</footer>

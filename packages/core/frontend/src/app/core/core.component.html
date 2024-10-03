@@ -1,0 +1,23 @@
+<!-- <navigation></navigation> -->
+<h1>APPLICATION</h1>
+<main>
+	<div class="available-plugins">
+		<p>AVAILABLE</p>
+		@for (plugin of availablePlugins; track plugin.id) {
+		<div class="plugin">
+			<h3>{{ plugin.name }} ({{ plugin.id }})</h3>
+			<p>{{ plugin.description }}</p>
+			<p>{{ plugin.version }}</p>
+
+			@if (plugin.isInstalled) {
+			<button (click)="uninstall(plugin)">Uninstall</button>
+			} @else {
+			<button (click)="install(plugin)">Install</button>
+			}
+		</div>
+		}
+	</div>
+	<!-- <div class="installed-plugins">
+		<ng-container #container></ng-container>
+	</div> -->
+</main>

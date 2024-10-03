@@ -1,25 +1,13 @@
-import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PluginsService } from '@pihub/openapi';
+import { CoreComponent } from './core/core.component';
+import { NavigationComponent } from './features/navigation/navigation.component';
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports: [RouterOutlet, HttpClientModule],
 	templateUrl: './app.component.html',
-	styleUrl: './app.component.css',
+	styleUrl: './app.component.scss',
+	imports: [CoreComponent, RouterOutlet, NavigationComponent],
 })
-export class AppComponent {
-	pluginsService!: PluginsService;
-
-	plugins: Array<any> = [];
-
-	constructor(pluginsService: PluginsService) {
-		this.pluginsService = pluginsService;
-	}
-
-	ngOnInit() {
-		this.pluginsService.getPluginList().subscribe((list) => (this.plugins = list));
-	}
-}
+export class AppComponent {}

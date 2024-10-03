@@ -1,0 +1,19 @@
+:host {
+	display: block;
+	padding-top: 15px;
+	margin: 0 18px;
+
+	transition: margin 0.3s ease;
+
+	&.navigation-collapsed {
+		margin: 0 15px;
+	}
+}
+
+:host:not(:first-of-type) {
+	border-top: 1px solid var(--color-tertiary-900);
+}
+
+:host:not(:last-of-type) {
+	padding-bottom: 15px;
+}

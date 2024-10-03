@@ -1,6 +1,7 @@
-import { TypedBody, TypedParam, TypedRoute } from '@nestia/core';
-import { Controller } from '@nestjs/common';
+import { TypedParam, TypedRoute } from '@nestia/core';
+import { Body, Controller, Get, Res, StreamableFile } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
+import { Response } from 'express';
 import { PluginId } from 'src/api/plugins/models/PluginId';
 import { PluginInfo } from 'src/api/plugins/models/PluginInfo';
 
@@ -45,6 +46,20 @@ export class PluginsController {
 		return await this.service.getPluginInfo(pluginId);
 	}
 
+	@ApiTags('plugins')
+	@Get(':pluginId/:sourcePath')
+	public async getSourceCode(
+		@Res({ passthrough: true }) res: Response,
+		@TypedParam('pluginId') pluginId: string,
+		@TypedParam('sourcePath') sourcePath: string,
+	): Promise<StreamableFile> {
+		res.header({
+			'Content-Type': 'application/javascript',
+		});
+
+		return this.service.getSourceCode(pluginId, sourcePath);
+	}
+
 	/**
 	 * Install a plugin.
 	 *
@@ -56,39 +71,39 @@ export class PluginsController {
 	 */
 	@ApiTags('plugins')
 	@TypedRoute.Post('install')
-	public async installPlugin(@TypedBody() body: PluginId): Promise<void> {
+	public async installPlugin(@Body() body: PluginId): Promise<void> {
 		return await this.service.installPlugin(body.pluginId);
 	}
 
-	/**
-	 * Activate a plugin.
-	 *
-	 * @public @async
-	 *
-	 * @param {string} pluginId The id of the plugin
-	 *
-	 * @summary activate plugin
-	 */
-	@ApiTags('plugins')
-	@TypedRoute.Post(':pluginId/activate')
-	public async activatePlugin(@TypedParam('pluginId') pluginId: string): Promise<void> {
-		return await this.service.activatePlugin(pluginId);
-	}
+	// /**
+	//  * Activate a plugin.
+	//  *
+	//  * @public @async
+	//  *
+	//  * @param {string} pluginId The id of the plugin
+	//  *
+	//  * @summary activate plugin
+	//  */
+	// @ApiTags('plugins')
+	// @TypedRoute.Post(':pluginId/activate')
+	// public async activatePlugin(@TypedParam('pluginId') pluginId: string): Promise<void> {
+	// 	return await this.service.activatePlugin(pluginId);
+	// }
 
-	/**
-	 * Deactivate a plugin.
-	 *
-	 * @public @async
-	 *
-	 * @param {string} pluginId The id of the plugin
-	 *
-	 * @summary deactivate plugin
-	 */
-	@ApiTags('plugins')
-	@TypedRoute.Post(':pluginId/deactivate')
-	public async deactivatePlugin(@TypedParam('pluginId') pluginId: string): Promise<void> {
-		return await this.service.deactivatePlugin(pluginId);
-	}
+	// /**
+	//  * Deactivate a plugin.
+	//  *
+	//  * @public @async
+	//  *
+	//  * @param {string} pluginId The id of the plugin
+	//  *
+	//  * @summary deactivate plugin
+	//  */
+	// @ApiTags('plugins')
+	// @TypedRoute.Post(':pluginId/deactivate')
+	// public async deactivatePlugin(@TypedParam('pluginId') pluginId: string): Promise<void> {
+	// 	return await this.service.deactivatePlugin(pluginId);
+	// }
 
 	/**
 	 * Uninstall a plugin

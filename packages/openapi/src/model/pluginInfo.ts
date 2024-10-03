@@ -17,7 +17,6 @@ export interface PluginInfo {
     name: string;
     id: string;
     url: string;
-    isActivated: boolean;
     isInstalled: boolean;
 }
 

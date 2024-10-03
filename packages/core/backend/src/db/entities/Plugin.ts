@@ -21,8 +21,8 @@ export class Plugin {
 	@Property({ type: 'varchar', nullable: false })
 	readonly url!: string;
 
-	@Property({ type: 'boolean', nullable: false, default: false })
-	readonly isActivated!: boolean;
+	// @Property({ type: 'boolean', nullable: false, default: false })
+	// readonly isActivated!: boolean;
 
 	@Property({ type: 'boolean', nullable: false, default: false })
 	readonly isInstalled!: boolean;

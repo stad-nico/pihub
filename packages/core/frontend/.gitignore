@@ -1,3 +1,4 @@
 .vscode
 generated
 node_modules
+dist
