@@ -1,17 +1,20 @@
+import { provideHttpClient } from '@angular/common/http';
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { withNgxsLoggerPlugin } from '@ngxs/logger-plugin';
+import { withNgxsRouterPlugin } from '@ngxs/router-plugin';
 import { provideStore } from '@ngxs/store';
-import { API } from '@pihub/api';
+import { PiHubApi } from '@pihub/api';
 import { PiHubApiImpl } from './api';
 import { routes } from './app.routes';
-import { T } from './store';
+import { AppState } from './store';
 
 export const appConfig: ApplicationConfig = {
 	providers: [
+		provideHttpClient(),
 		provideZoneChangeDetection({ eventCoalescing: true }),
 		provideRouter(routes),
-		{ provide: API, useClass: PiHubApiImpl },
-		provideStore([T], withNgxsLoggerPlugin()),
+		provideStore([AppState], withNgxsLoggerPlugin(), withNgxsRouterPlugin()),
+		{ provide: PiHubApi, useClass: PiHubApiImpl },
 	],
 };

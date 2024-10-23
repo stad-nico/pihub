@@ -1,22 +1,32 @@
-import { Injectable, Type } from '@angular/core';
-import { Store } from '@ngxs/store';
+import { Injectable } from '@angular/core';
+import { Route, Router, Routes } from '@angular/router';
 import { PiHubApi } from '@pihub/api';
-import { Subject } from 'rxjs';
-import { ActionTest } from './action';
 
 @Injectable({ providedIn: 'root' })
 export class PiHubApiImpl implements PiHubApi {
-	private readonly store: Store;
+	private readonly router: Router;
 
-	private readonly rootComponentSubject = new Subject<Type<unknown>>();
+	private readonly routes: Routes = [];
 
-	public readonly rootComponent$ = this.rootComponentSubject.asObservable();
-
-	constructor(store: Store) {
-		this.store = store;
+	constructor(router: Router) {
+		this.router = router;
 	}
 
-	public overrideRootComponent<T>(component: Type<T>): void {
-		this.store.dispatch(new ActionTest(component));
+	public appendRoute(route: Route): void {
+		this.routes.push(route);
+		this.router.resetConfig(this.routes);
+	}
+
+	public prependRoute(route: Route): void {
+		this.routes.unshift(route);
+		this.router.resetConfig(this.routes);
+	}
+
+	public updateRoute(path: string, partial: Partial<Route>): void {
+		const index = this.routes.findIndex((route) => route.path === path);
+
+		this.routes[index] = { ...this.routes.at(index), ...partial };
+
+		this.router.resetConfig(this.routes);
 	}
 }

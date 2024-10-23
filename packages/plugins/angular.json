@@ -5,9 +5,14 @@
 	"projects": {
 		"ui": {
 			"projectType": "library",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
 			"root": "ui",
 			"sourceRoot": "ui/src",
-			"prefix": "plugin",
+			"prefix": "ui-plugin",
 			"architect": {
 				"build": {
 					"builder": "@angular-devkit/build-angular:ng-packagr",

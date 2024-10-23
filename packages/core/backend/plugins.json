@@ -1,0 +1,7 @@
+[
+	{
+		"name": "ui",
+		"url": "http://localhost:5500/packages/plugins/dist/ui/fesm2022/ui.mjs",
+		"isInstalled": false
+	}
+]

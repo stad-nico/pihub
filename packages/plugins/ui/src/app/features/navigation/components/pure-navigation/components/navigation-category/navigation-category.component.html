@@ -1,0 +1,3 @@
+@for (item of category.items; track item.title) {
+<ui-plugin-navigation-item (onClick)="onClickHandler($event)" [item]="item"></ui-plugin-navigation-item>
+}

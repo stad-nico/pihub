@@ -1,44 +1,36 @@
-import {
-	Component,
-	Injector,
-	runInInjectionContext,
-	ViewContainerRef,
-} from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngxs/store';
+import { PiHubApi } from '@pihub/api';
+import { Plugin } from 'generated';
+import { Observable } from 'rxjs';
 import { PiHubApiImpl } from './api';
-import { T } from './store';
+import { AppState, FetchPlugins, LoadPlugin } from './store';
 
 @Component({
 	selector: 'app',
 	standalone: true,
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss',
+	imports: [RouterOutlet],
+	providers: [{ provide: PiHubApi, useClass: PiHubApiImpl }],
 })
 export class AppComponent {
-	constructor(
-		private injector: Injector,
-		private api: PiHubApiImpl,
-		private store: Store,
-		private viewContainerRef: ViewContainerRef
-	) {}
+	private readonly store: Store;
 
-	async ngOnInit() {
-		this.store.select(T.getR).subscribe((f) => {
-			if (!f.rootC) {
-				return;
-			}
+	private readonly installedPlugins$: Observable<Array<Plugin>>;
 
-			const m = this.viewContainerRef.createComponent(f.rootC);
-			console.log(m);
-		});
+	constructor(store: Store) {
+		this.store = store;
 
-		const module = await import(
-			// @ts-ignore
-			'http://127.0.0.1:5500/packages/plugins/dist/ui/fesm2022/ui.mjs'
-		);
+		this.installedPlugins$ = this.store.select(AppState.selectInstalledPlugins);
+	}
 
-		runInInjectionContext(this.injector, async () => {
-			await module.initialize();
+	ngOnInit() {
+		this.store.dispatch(new FetchPlugins());
+
+		this.installedPlugins$.subscribe((plugins) => {
+			this.store.dispatch(plugins.map((plugin) => new LoadPlugin(plugin.id)));
 		});
 	}
 }
