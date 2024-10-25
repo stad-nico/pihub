@@ -7,13 +7,17 @@ export class FetchPlugins {
 	public static readonly type = '[App] Fetch Plugins';
 }
 
-export class LoadPlugin {
+export class Initialize {
+	public static readonly type = '[App] Initialize';
+}
+
+export class LoadPlugins {
 	public static readonly type = '[App] Load Plugins';
 
-	public readonly id: string;
+	public readonly ids: Array<string>;
 
-	public constructor(id: string) {
-		this.id = id;
+	public constructor(ids: Array<string>) {
+		this.ids = ids;
 	}
 }
 
@@ -29,7 +33,9 @@ interface AppStateModel {
 export class AppState {
 	private readonly pluginsService: PluginsService;
 
-	private readonly injector: Injector;
+	private injector: Injector;
+
+	private modules: Array<any> = [];
 
 	public constructor(pluginsService: PluginsService, injector: Injector) {
 		this.pluginsService = pluginsService;
@@ -46,18 +52,31 @@ export class AppState {
 		return this.pluginsService.getList().pipe(tap((list) => ctx.patchState({ plugins: list })));
 	}
 
-	@Action(LoadPlugin)
-	public async loadPlugin(ctx: StateContext<AppStateModel>, action: LoadPlugin) {
-		const plugin = ctx.getState().plugins.find((plugin) => plugin.id === action.id);
+	@Action(LoadPlugins)
+	public async loadPlugins(ctx: StateContext<AppStateModel>, action: LoadPlugins) {
+		const plugins = ctx.getState().plugins;
+		const modules: Array<any> = [];
 
-		if (!plugin) {
-			throw new Error('plugin not in state');
+		for (const id of action.ids) {
+			const plugin = plugins.find((plugin) => plugin.id === id);
+
+			if (!plugin?.isInstalled) {
+				continue;
+			}
+
+			// ! WORKAROUND UNTIL IMPORTING FROM BLOBS IS SUPPORTED ! //
+			const module = await import((() => `@pihub/plugin-${plugin.name}`)());
+			this.injector = Injector.create({ providers: module.providers, parent: this.injector });
+			this.modules.push(module);
 		}
+	}
 
-		const module = await import(plugin.url);
-
-		runInInjectionContext(this.injector, async () => {
-			await module.initialize();
-		});
+	@Action(Initialize)
+	public async initialize() {
+		for (const module of this.modules) {
+			await runInInjectionContext(this.injector, async () => {
+				await module.initialize();
+			});
+		}
 	}
 }

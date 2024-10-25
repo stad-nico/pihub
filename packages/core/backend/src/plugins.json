@@ -1,0 +1,17 @@
+[
+	{
+		"name": "ui",
+		"url": "http://localhost:5500/packages/plugins/ui/dist/fesm2022/pihub-plugin-ui.mjs",
+		"isInstalled": true
+	},
+	{
+		"name": "settings",
+		"url": "http://localhost:5500/packages/plugins/settings/dist/fesm2022/pihub-plugin-settings.mjs",
+		"isInstalled": true
+	},
+	{
+		"name": "dashboard",
+		"url": "http://localhost:5500/packages/plugins/dashboard/dist/fesm2022/pihub-plugin-dashboard.mjs",
+		"isInstalled": true
+	}
+]

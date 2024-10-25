@@ -1,0 +1,29 @@
+{
+	"name": "@pihub/plugin-settings",
+	"version": "0.0.1",
+	"peerDependencies": {
+		"@angular/common": "^18.2.0",
+		"@angular/core": "^18.2.0",
+		"@ngxs/router-plugin": "^18.1.1",
+		"@ngxs/store": "^18.1.1",
+		"@pihub/plugin-ui": "file:.yalc/@pihub/plugin-ui"
+	},
+	"dependencies": {
+		"tslib": "^2.3.0"
+	},
+	"devDependencies": {
+		"@angular-devkit/build-angular": "^18.2.9",
+		"@angular/cli": "^18.2.5",
+		"@angular/compiler-cli": "^18.2.0",
+		"@types/jasmine": "~5.1.0",
+		"jasmine-core": "~5.2.0",
+		"karma": "~6.4.0",
+		"karma-chrome-launcher": "~3.2.0",
+		"karma-coverage": "~2.2.0",
+		"karma-jasmine": "~5.1.0",
+		"karma-jasmine-html-reporter": "~2.1.0",
+		"ng-packagr": "^18.2.0",
+		"typescript": "~5.5.2"
+	},
+	"sideEffects": false
+}

@@ -1,7 +1,8 @@
 import { Inject, Injectable, InjectionToken, Type } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { PiHubApi } from '@pihub/api';
-import { AppendCategory, AppendItem } from '../features/navigation/state/navigation.action';
+import { AppendCategory, AppendItem } from '../app/features/navigation/state/navigation.action';
+import { toKebabCase } from './../app/shared/toKebabCase';
 
 type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
 
@@ -25,7 +26,7 @@ export interface UiPluginApi {
 
 export const UiPluginApi = new InjectionToken<UiPluginApi>('UiPluginApi');
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class UiPluginApiImpl implements UiPluginApi {
 	private readonly store: Store;
 
@@ -41,10 +42,11 @@ export class UiPluginApiImpl implements UiPluginApi {
 	}
 
 	appendNavigationItem(categoryName: string, item: NavigationItem): void {
-		this.api.updateRoute('', {
+		this.api.routes.updateRoute('', {
 			children: [
+				...(this.api.routes.getRoute('')?.children ?? []),
 				{
-					path: `${item.title}`,
+					path: `${toKebabCase(item.title)}`,
 					component: item.pageComponent,
 				},
 			],

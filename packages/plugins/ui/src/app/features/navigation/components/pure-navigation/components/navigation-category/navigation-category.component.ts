@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { NavigationCategory } from '../../../../../../api';
+import { NavigationCategory } from '../../../../../../../api';
+import { LastSelectedModel } from '../../../../state/navigation.state';
 import { NavigationItemComponent } from './components/navigation-item/navigation-item.component';
 
 @Component({
@@ -12,6 +13,9 @@ import { NavigationItemComponent } from './components/navigation-item/navigation
 export class NavigationCategoryComponent {
 	@Input({ required: true })
 	public category!: NavigationCategory;
+
+	@Input({ required: true })
+	public lastSelected!: LastSelectedModel | null;
 
 	@Output()
 	public onClick: EventEmitter<{ categoryTitle: string; itemTitle: string }> = new EventEmitter();

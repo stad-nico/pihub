@@ -27,6 +27,14 @@
 		}
 	}
 
+	&.selected {
+		background-color: var(--color-background-700);
+
+		&:hover {
+			background-color: var(--color-background-600);
+		}
+	}
+
 	&:not(:last-of-type) {
 		margin-bottom: 2px;
 	}

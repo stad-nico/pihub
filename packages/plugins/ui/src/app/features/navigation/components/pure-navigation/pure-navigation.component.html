@@ -25,7 +25,7 @@
 	<div class="categories">
 		<div></div>
 		@for (category of categories; track category.title) {
-		<ui-plugin-navigation-category (onClick)="onClickHandler($event)" [category]="category"></ui-plugin-navigation-category>
+		<ui-plugin-navigation-category (onClick)="onClickHandler($event)" [lastSelected]="lastSelected" [category]="category"></ui-plugin-navigation-category>
 		} @empty {
 		<p>No navigation categories</p>
 		}

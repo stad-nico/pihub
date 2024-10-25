@@ -1,18 +1,15 @@
 {
-	"name": "@pihub/plugins",
-	"version": "0.0.0",
-	"dependencies": {
-		"@angular/animations": "^18.2.0",
+	"name": "@pihub/plugin-dashboard",
+	"version": "0.0.1",
+	"peerDependencies": {
 		"@angular/common": "^18.2.0",
-		"@angular/compiler": "^18.2.0",
 		"@angular/core": "^18.2.0",
-		"@angular/forms": "^18.2.0",
-		"@angular/platform-browser": "^18.2.0",
-		"@angular/platform-browser-dynamic": "^18.2.0",
-		"@angular/router": "^18.2.0",
-		"rxjs": "~7.8.0",
-		"tslib": "^2.3.0",
-		"zone.js": "~0.14.10"
+		"@ngxs/router-plugin": "^18.1.1",
+		"@ngxs/store": "^18.1.1",
+		"@pihub/plugin-ui": "file:.yalc/@pihub/plugin-ui"
+	},
+	"dependencies": {
+		"tslib": "^2.3.0"
 	},
 	"devDependencies": {
 		"@angular-devkit/build-angular": "^18.2.9",
@@ -27,5 +24,6 @@
 		"karma-jasmine-html-reporter": "~2.1.0",
 		"ng-packagr": "^18.2.0",
 		"typescript": "~5.5.2"
-	}
+	},
+	"sideEffects": false
 }

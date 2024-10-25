@@ -5,7 +5,7 @@
 		"version": "7.5.0",
 		"generators": {
 			"angular": {
-				"inputSpec": "../openapi.json",
+				"inputSpec": "../openapi/openapi.json",
 				"output": "generated",
 				"generatorName": "typescript-angular",
 				"removeOperationIdPrefix": true

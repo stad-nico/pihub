@@ -2,11 +2,20 @@ import { Injectable } from '@angular/core';
 import { Navigate } from '@ngxs/router-plugin';
 import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { append, patch, updateItem } from '@ngxs/store/operators';
-import { NavigationCategory } from '../../../api';
+import { NavigationCategory } from '../../../../api';
+import { toKebabCase } from './../../../shared/toKebabCase';
 import { AppendCategory, AppendItem, Navigate as NavigateAction } from './navigation.action';
+
+export interface LastSelectedModel {
+	readonly category: string;
+
+	readonly item: string;
+}
 
 interface NavigationStateModel {
 	readonly categories: Array<NavigationCategory>;
+
+	readonly lastSelected: LastSelectedModel | null;
 }
 
 @State<NavigationStateModel>({
@@ -15,16 +24,19 @@ interface NavigationStateModel {
 		categories: [
 			{
 				title: 'plugins',
-				items: [
-					{ title: 'Dashboard', pageComponent: 0 as any },
-					{ title: 'Settings', pageComponent: 0 as any },
-				],
+				items: [],
 			},
 		],
+		lastSelected: null,
 	},
 })
 @Injectable()
 export class NavigationState {
+	@Selector()
+	public static getLastSelected(state: NavigationStateModel) {
+		return state.lastSelected;
+	}
+
 	@Selector()
 	public static getCategories(state: NavigationStateModel) {
 		return state.categories.filter((category) => category.items.length > 0);
@@ -63,6 +75,8 @@ export class NavigationState {
 
 	@Action(NavigateAction)
 	public navigate(ctx: StateContext<NavigationStateModel>, action: NavigateAction) {
+		ctx.setState(patch({ lastSelected: null }));
+
 		const category = ctx.getState().categories.find((category) => category.title === action.event.categoryTitle);
 
 		if (!category) {
@@ -77,6 +91,14 @@ export class NavigationState {
 			return;
 		}
 
-		ctx.dispatch(new Navigate(['/', item.title]));
+		ctx.setState(
+			patch({
+				lastSelected: {
+					category: action.event.categoryTitle,
+					item: action.event.itemTitle,
+				},
+			})
+		);
+		return ctx.dispatch(new Navigate(['/', toKebabCase(item.title)]));
 	}
 }

@@ -23,6 +23,20 @@ export class PluginService {
 		this.storeService = storeService;
 	}
 
+	public async reload(): Promise<void> {
+		return await this.entityManager.transactional(async (entityManager) => {
+			const plugins = await this.pluginRepository.selectAll(entityManager);
+
+			for (const plugin of plugins) {
+				if (plugin.isInstalled) {
+					const source = await fetch(plugin.url);
+
+					await this.storeService.store(plugin.id, source.body!);
+				}
+			}
+		});
+	}
+
 	public async getList(): Promise<Array<Plugin>> {
 		return await this.entityManager.transactional(async (entityManager) => {
 			const plugins = await this.pluginRepository.selectAll(entityManager);

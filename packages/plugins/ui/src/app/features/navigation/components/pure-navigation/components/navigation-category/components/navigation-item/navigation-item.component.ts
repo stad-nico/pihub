@@ -1,5 +1,5 @@
-import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
-import { NavigationItem } from '../../../../../../../../api';
+import { Component, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
+import { NavigationItem } from '../../../../../../../../../api';
 
 @Component({
 	selector: 'ui-plugin-navigation-item',
@@ -11,6 +11,10 @@ import { NavigationItem } from '../../../../../../../../api';
 export class NavigationItemComponent {
 	@Input({ required: true })
 	public item!: NavigationItem;
+
+	@Input()
+	@HostBinding('class.selected')
+	public isSelected: boolean = false;
 
 	@Output()
 	public onClick: EventEmitter<string> = new EventEmitter();

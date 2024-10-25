@@ -10,7 +10,7 @@ config({ path: `${process.env?.['NODE_ENV']}.env` });
 
 export default defineConfig({
 	driver: MariaDbDriver,
-	entities: ['dist/src/db/entities'],
+	entities: ['dist/db/entities'],
 	entitiesTs: ['src/db/entities'],
 	clientUrl: process.env[Environment.DBUrl],
 	dbName: process.env[Environment.DBName],
@@ -23,14 +23,14 @@ export default defineConfig({
 	baseDir: process.cwd(),
 	migrations: {
 		tableName: 'migrations',
-		path: 'dist/src/db/migrations',
+		path: 'dist/db/migrations',
 		pathTs: 'src/db/migrations',
 		transactional: true,
 		snapshot: false,
 		emit: 'ts',
 	},
 	seeder: {
-		path: 'dist/src/db/seeding',
+		path: 'dist/db/seeding',
 		pathTs: 'src/db/seeding',
 		emit: 'ts',
 		defaultSeeder: 'MainSeeder',

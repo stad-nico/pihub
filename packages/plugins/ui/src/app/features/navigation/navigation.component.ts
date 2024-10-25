@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { NavigationCategory } from '../../api';
+import { NavigationCategory } from '../../../api';
 import { PureNavigationComponent } from './components/pure-navigation/pure-navigation.component';
 import { Navigate } from './state/navigation.action';
-import { NavigationState } from './state/navigation.state';
+import { LastSelectedModel, NavigationState } from './state/navigation.state';
 
 @Component({
 	selector: 'ui-plugin-navigation',
@@ -18,16 +18,23 @@ export class NavigationComponent {
 
 	private readonly categories$: Observable<Array<NavigationCategory>>;
 
+	private readonly lastSelected$: Observable<LastSelectedModel | null>;
+
 	public categories: Array<NavigationCategory> = [];
+
+	public lastSelected: LastSelectedModel | null = null;
 
 	public constructor(store: Store) {
 		this.store = store;
 
 		this.categories$ = this.store.select(NavigationState.getCategories);
+		this.lastSelected$ = this.store.select(NavigationState.getLastSelected);
 	}
 
 	public ngOnInit() {
 		this.categories$.subscribe((categories) => (this.categories = categories));
+
+		this.lastSelected$.subscribe((lastSelected) => (this.lastSelected = lastSelected));
 	}
 
 	public onClickHandler(event: { categoryTitle: string; itemTitle: string }) {

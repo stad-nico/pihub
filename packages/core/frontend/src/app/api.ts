@@ -1,15 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Route, Router, Routes } from '@angular/router';
-import { PiHubApi } from '@pihub/api';
+import { PiHubApi, RouteApi } from '@pihub/api';
 
 @Injectable({ providedIn: 'root' })
 export class PiHubApiImpl implements PiHubApi {
+	public readonly routes: RouteApiImpl;
+
+	public constructor(routes: RouteApiImpl) {
+		this.routes = routes;
+	}
+}
+
+@Injectable({ providedIn: 'root' })
+export class RouteApiImpl implements RouteApi {
 	private readonly router: Router;
 
 	private readonly routes: Routes = [];
 
 	constructor(router: Router) {
 		this.router = router;
+	}
+
+	public getRoute(path: string): Route | null {
+		return this.routes.find((route) => route.path === path) ?? null;
 	}
 
 	public appendRoute(route: Route): void {

@@ -1,4 +1,4 @@
-import { NavigationCategory, NavigationItem } from '../../../api';
+import { NavigationCategory, NavigationItem } from '../../../../api';
 
 export class AppendCategory {
 	public static type = '[Navigation] Append Category';

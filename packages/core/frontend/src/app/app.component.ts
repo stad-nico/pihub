@@ -5,7 +5,7 @@ import { PiHubApi } from '@pihub/api';
 import { Plugin } from 'generated';
 import { Observable } from 'rxjs';
 import { PiHubApiImpl } from './api';
-import { AppState, FetchPlugins, LoadPlugin } from './store';
+import { AppState, FetchPlugins, Initialize, LoadPlugins } from './store';
 
 @Component({
 	selector: 'app',
@@ -30,7 +30,7 @@ export class AppComponent {
 		this.store.dispatch(new FetchPlugins());
 
 		this.installedPlugins$.subscribe((plugins) => {
-			this.store.dispatch(plugins.map((plugin) => new LoadPlugin(plugin.id)));
+			this.store.dispatch(new LoadPlugins(plugins.map((plugin) => plugin.id))).subscribe(() => this.store.dispatch(new Initialize()));
 		});
 	}
 }
