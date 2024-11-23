@@ -1,0 +1,3 @@
+@for (breadcrumb of breadcrumbs; track breadcrumb.id) {
+<breadcrumb @fadeAnimation (onClick)="onCrumbClick.emit(breadcrumb.id)" [breadcrumb]="breadcrumb"></breadcrumb>
+}

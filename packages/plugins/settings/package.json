@@ -5,8 +5,10 @@
 		"@angular/common": "^18.2.0",
 		"@angular/core": "^18.2.0",
 		"@ngxs/router-plugin": "^18.1.1",
+		"@pihub/api": "file:.yalc/@pihub/api",
 		"@ngxs/store": "^18.1.1",
-		"@pihub/plugin-ui": "file:.yalc/@pihub/plugin-ui"
+		"@pihub/ui": "file:.yalc/@pihub/ui",
+		"@pihub/common": "file:.yalc/@pihub/common"
 	},
 	"dependencies": {
 		"tslib": "^2.3.0"

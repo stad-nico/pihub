@@ -1,3 +1,6 @@
 .angular
 dist
 node_modules
+generated
+.yalc
+yalc.lock

@@ -2,6 +2,7 @@ import { EntityManager } from '@mikro-orm/mariadb';
 import { Injectable, Logger } from '@nestjs/common';
 import { ReadStream } from 'fs';
 import { Plugin } from 'src/db/entities/plugin.entity';
+import { PluginCannotBeRemovedException } from 'src/exceptions/PluginCannotBeRemovedException';
 import { PluginNotFoundException } from 'src/exceptions/PluginNotFoundException';
 import { PluginNotInstalledException } from 'src/exceptions/PluginNotInstalledException';
 import { PluginRepository } from 'src/plugins/plugin.repository';
@@ -29,9 +30,11 @@ export class PluginService {
 
 			for (const plugin of plugins) {
 				if (plugin.isInstalled) {
-					const source = await fetch(plugin.url);
+					const source = await fetch(plugin.sourceUrl);
+					await this.storeService.store(plugin.sourceId, source.body!);
 
-					await this.storeService.store(plugin.id, source.body!);
+					const config = await fetch(plugin.configUrl);
+					await this.storeService.store(plugin.configId, config.body!);
 				}
 			}
 		});
@@ -57,10 +60,32 @@ export class PluginService {
 				throw new PluginNotInstalledException(pluginId);
 			}
 
-			const readStream = await this.storeService.get(pluginId);
+			const readStream = await this.storeService.get(plugin.sourceId);
 
 			if (!readStream) {
 				throw new Error(`plugin ${pluginId} is installed but no source code is present`);
+			}
+
+			return readStream;
+		});
+	}
+
+	public async getConfig(pluginId: string): Promise<ReadStream> {
+		return await this.entityManager.transactional(async (entityManager) => {
+			const plugin = await this.pluginRepository.select(entityManager, pluginId);
+
+			if (!plugin) {
+				throw new PluginNotFoundException(pluginId);
+			}
+
+			if (!plugin.isInstalled) {
+				throw new PluginNotInstalledException(pluginId);
+			}
+
+			const readStream = await this.storeService.get(plugin.configId);
+
+			if (!readStream) {
+				throw new Error(`plugin ${pluginId} is installed but no config code is present`);
 			}
 
 			return readStream;
@@ -75,14 +100,16 @@ export class PluginService {
 				throw new PluginNotFoundException(pluginId);
 			}
 
-			if (plugin.isInstalled && (await this.storeService.has(pluginId))) {
-				this.logger.log(`plugin ${pluginId} already installed, skipping installation`);
-				return;
-			}
+			// if (plugin.isInstalled && (await this.storeService.has(plugin.))) {
+			// 	this.logger.log(`plugin ${pluginId} already installed, skipping installation`);
+			// 	return;
+			// }
 
-			const source = await fetch(plugin.url);
+			const source = await fetch(plugin.sourceUrl);
+			await this.storeService.store(plugin.sourceId, source.body!);
 
-			await this.storeService.store(pluginId, source.body!);
+			const config = await fetch(plugin.configUrl);
+			await this.storeService.store(plugin.configId, config.body!);
 
 			await this.pluginRepository.install(entityManager, pluginId);
 		});
@@ -96,13 +123,16 @@ export class PluginService {
 				throw new PluginNotFoundException(pluginId);
 			}
 
-			if (!plugin.isInstalled && !this.storeService.has(pluginId)) {
-				this.logger.log(`plugin ${pluginId} already uninstalled, skipping removal`);
-				return;
+			if (plugin.isCore) {
+				throw new PluginCannotBeRemovedException(pluginId);
 			}
 
-			if (await this.storeService.has(pluginId)) {
-				await this.storeService.remove(pluginId);
+			if (await this.storeService.has(plugin.configId)) {
+				await this.storeService.remove(plugin.configId);
+			}
+
+			if (await this.storeService.has(plugin.sourceId)) {
+				await this.storeService.remove(plugin.sourceId);
 			}
 
 			await this.pluginRepository.uninstall(entityManager, pluginId);

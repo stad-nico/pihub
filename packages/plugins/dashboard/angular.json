@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": ".",
 	"projects": {
-		"ui": {
+		"dashboard": {
 			"projectType": "library",
 			"schematics": {
 				"@schematics/angular:component": {

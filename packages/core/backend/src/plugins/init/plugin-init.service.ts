@@ -30,24 +30,29 @@ export class PluginInitService {
 			this.logger.log(`Analyzing ${plugins.length} ${plugins.length === 1 ? 'plugin' : 'plugins'}`);
 
 			for (const plugin of plugins) {
-				if (!plugin.isInstalled) {
-					this.logger.log(`Plugin ${plugin.id} (${plugin.name}) not installed, skipping`);
-					continue;
-				}
+				// if (!plugin.isInstalled) {
+				// 	this.logger.log(`Plugin ${plugin.id} (${plugin.name}) not installed, skipping`);
+				// 	continue;
+				// }
 
-				if (await this.storeService.has(plugin.id)) {
-					this.logger.log(`Plugin ${plugin.id} (${plugin.name}) already downloaded, skipping`);
-					continue;
-				}
+				// if (await this.storeService.has(plugin.id)) {
+				// 	this.logger.log(`Plugin ${plugin.id} (${plugin.name}) already downloaded, skipping`);
+				// 	continue;
+				// }
 
-				if (plugin.isInstalled && !(await this.storeService.has(plugin.id))) {
-					this.logger.log(`Downloading plugin ${plugin.id} (${plugin.name})...`);
-					const source = await fetch(plugin.url);
+				// if (plugin.isInstalled && !(await this.storeService.has(plugin.id))) {
+				// this.logger.log(`Downloading plugin ${plugin.id} (${plugin.name})...`);
+				// const source = await fetch(plugin.url);
 
-					await this.storeService.store(plugin.id, source.body!);
+				// await this.storeService.store(plugin.id, source.body!);
 
-					this.logger.log(`Success`);
-				}
+				// this.logger.log(`Success`);
+				// }
+				const source = await fetch(plugin.sourceUrl);
+				await this.storeService.store(plugin.sourceId, source.body!);
+
+				const config = await fetch(plugin.configUrl);
+				await this.storeService.store(plugin.configId, config.body!);
 			}
 		});
 	}

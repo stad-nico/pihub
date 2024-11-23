@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, Res, StreamableFile } from '@nestjs/common';
+import { Controller, Get, Header, Param, Post, Res, StreamableFile } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
 
@@ -37,12 +37,38 @@ export class PluginController {
 	 * @returns the source code
 	 */
 	@Get(':pluginId/source')
-	@ApiResponse({ content: { 'text/javascript': { schema: { type: 'string', format: 'binary' } } } })
+	@Header('Content-Type', 'application/javascript')
+	@ApiResponse({ content: { 'application/javascript': { schema: { type: 'string', format: 'binary' } } } })
 	public async getSourceCode(@Res({ passthrough: true }) res: Response, @Param('pluginId') pluginId: string): Promise<StreamableFile> {
 		console.log(pluginId);
 		const readStream = await this.pluginService.getSourceCode(pluginId);
 
-		res.appendHeader('Access-Control-Allow-Origin', '*').appendHeader('Content-Type', 'text/javascript');
+		res.set({
+			'Access-Control-Allow-Origin': '*',
+			'Content-Type': 'application/javascript',
+		});
+		return new StreamableFile(readStream);
+	}
+
+	/**
+	 * Get the config code of an installed plugin
+	 * @public @async
+	 *
+	 * @param res the response
+	 * @param pluginId the pluginId
+	 * @returns the config code
+	 */
+	@Get(':pluginId/config')
+	@Header('Content-Type', 'application/javascript')
+	@ApiResponse({ content: { 'application/javascript': { schema: { type: 'string', format: 'binary' } } } })
+	public async getConfig(@Res({ passthrough: true }) res: Response, @Param('pluginId') pluginId: string): Promise<StreamableFile> {
+		console.log(pluginId);
+		const readStream = await this.pluginService.getConfig(pluginId);
+
+		res.set({
+			'Access-Control-Allow-Origin': '*',
+			'Content-Type': 'application/javascript',
+		});
 		return new StreamableFile(readStream);
 	}
 

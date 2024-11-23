@@ -1,0 +1,854 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Core",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/organisms/plugin-card/plugin-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<PluginCardComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Settings',\r\n\t\tisInstalled: true,\r\n\t\tisCore: true,\r\n\t\tdescription:\r\n\t\t\t'This is a very long description that need multiple lines and should be truncated correctly. It would be nice if there is a \"View More\" button if the text is really this long.',\r\n\t\tversion: 'v1.0.0',\r\n\t},\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<ButtonComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Button',\r\n\t\tstate: State.Default,\r\n\t},\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<IconComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\turl: 'assets/icons/dashboard.svg',\r\n\t\tsize: Size.Default,\r\n\t},\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/organisms/list/list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<ListComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\titems: items,\r\n\t},\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/organisms/plugin-card/plugin-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<PluginCardComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\timageSource: './assets/images/example-plugin.jpg',\r\n\t\ttitle: 'Example Plugin',\r\n\t\tdescription: 'This is an example description. See how this looks with short text.',\r\n\t\tversion: 'v1.0.0',\r\n\t},\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/molecules/box/box.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<BoxComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Box',\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t\tstate: State.Default,\r\n\t\tstyle: Style.Default,\r\n\t},\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/templates/master-detail/master-detail.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<MasterDetailComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\titems: [\r\n\t\t\t{ title: 'Dashboard', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t\t{ title: 'Settings', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t\t{ title: 'Help', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t],\r\n\t},\r\n}"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<ButtonComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Button',\r\n\t\tstate: State.Disabled,\r\n\t},\r\n}"
+            },
+            {
+                "name": "Icon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<ButtonComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Button',\r\n\t\tstate: State.Default,\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t},\r\n}"
+            },
+            {
+                "name": "IconDisabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<ButtonComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Button',\r\n\t\tstate: State.Disabled,\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t},\r\n}"
+            },
+            {
+                "name": "Installed",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/organisms/plugin-card/plugin-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<PluginCardComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Settings',\r\n\t\tisInstalled: true,\r\n\t\tdescription:\r\n\t\t\t'This is a very long description that need multiple lines and should be truncated correctly. It would be nice if there is a \"View More\" button if the text is really this long.',\r\n\t\tversion: 'v1.0.0',\r\n\t},\r\n}"
+            },
+            {
+                "name": "items",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/organisms/list/list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n\t{ title: 'Dashboard', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t{ title: 'Settings', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t{ title: 'Help', iconUrl: 'assets/icons/dashboard.svg' },\r\n]"
+            },
+            {
+                "name": "LongDescription",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/organisms/plugin-card/plugin-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<PluginCardComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\timageSource: './assets/images/example-plugin.jpg',\r\n\t\ttitle: 'Example Plugin',\r\n\t\tdescription:\r\n\t\t\t'This is a very long description that need multiple lines and should be truncated correctly. It would be nice if there is a \"View More\" button if the text is really this long.',\r\n\t\tversion: 'v1.0.0',\r\n\t},\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\r\n\ttitle: 'Design System/Atoms/Button',\r\n\tcomponent: ButtonComponent,\r\n\targTypes: {\r\n\t\tonClick: { action: 'onClick' },\r\n\t},\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<IconComponent>",
+                "defaultValue": "{\r\n\ttitle: 'Design System/Atoms/Icon',\r\n\tcomponent: IconComponent,\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/organisms/list/list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ListComponent>",
+                "defaultValue": "{\r\n\ttitle: 'Design System/Organisms/List',\r\n\tcomponent: ListComponent,\r\n\targTypes: {\r\n\t\tonClick: { action: 'onClick' },\r\n\t},\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/organisms/plugin-card/plugin-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<PluginCardComponent>",
+                "defaultValue": "{\r\n\ttitle: 'Design System/Organisms/Plugin Card',\r\n\tparameters: {\r\n\t\tlayout: 'fullscreen',\r\n\t},\r\n\tcomponent: PluginCardComponent,\r\n\targTypes: {\r\n\t\tonInstallClick: { action: 'onInstallClick' },\r\n\t\tonUninstallClick: { action: 'onUninstallClick' },\r\n\t},\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/molecules/box/box.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<BoxComponent>",
+                "defaultValue": "{\r\n\ttitle: 'Design System/Molecules/Box',\r\n\tcomponent: BoxComponent,\r\n\targTypes: {\r\n\t\tonClick: { action: 'onClick' },\r\n\t},\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/templates/master-detail/master-detail.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<MasterDetailComponent>",
+                "defaultValue": "{\r\n\ttitle: 'Design System/Templates/Master Detail',\r\n\tcomponent: MasterDetailComponent,\r\n}"
+            },
+            {
+                "name": "NoImage",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/organisms/plugin-card/plugin-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<PluginCardComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Settings',\r\n\t\tdescription:\r\n\t\t\t'This is a very long description that need multiple lines and should be truncated correctly. It would be nice if there is a \"View More\" button if the text is really this long.',\r\n\t\tversion: 'v1.0.0',\r\n\t},\r\n}"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": ".storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\n\tparameters: {\n\t\tcontrols: {\n\t\t\tmatchers: {\n\t\t\t\tcolor: /(background|color)$/i,\n\t\t\t\tdate: /Date$/i,\n\t\t\t},\n\t\t},\n\t},\n}"
+            },
+            {
+                "name": "Selected",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/organisms/list/list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<ListComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\titems: items,\r\n\t\tselected: items[0],\r\n\t},\r\n}"
+            },
+            {
+                "name": "Selected",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/molecules/box/box.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<BoxComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Box',\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t\tstate: State.Selected,\r\n\t\tstyle: Style.Default,\r\n\t},\r\n}"
+            },
+            {
+                "name": "Selected",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/templates/master-detail/master-detail.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<MasterDetailComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\titems: [\r\n\t\t\t{ title: 'Dashboard', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t\t{ title: 'Settings', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t\t{ title: 'Help', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t],\r\n\t\tselected: { title: 'Dashboard', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t},\r\n}"
+            },
+            {
+                "name": "Slim",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/molecules/box/box.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<BoxComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Box',\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t\tstate: State.Default,\r\n\t\tstyle: Style.Slim,\r\n\t},\r\n}"
+            },
+            {
+                "name": "SlimSelected",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/molecules/box/box.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<BoxComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Box',\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t\tstate: State.Selected,\r\n\t\tstyle: Style.Slim,\r\n\t},\r\n}"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<IconComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\turl: 'assets/icons/dashboard.svg',\r\n\t\tsize: Size.Small,\r\n\t},\r\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/organisms/plugin-card/plugin-card.stories.ts": [
+                {
+                    "name": "Core",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/plugin-card/plugin-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<PluginCardComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Settings',\r\n\t\tisInstalled: true,\r\n\t\tisCore: true,\r\n\t\tdescription:\r\n\t\t\t'This is a very long description that need multiple lines and should be truncated correctly. It would be nice if there is a \"View More\" button if the text is really this long.',\r\n\t\tversion: 'v1.0.0',\r\n\t},\r\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/plugin-card/plugin-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<PluginCardComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\timageSource: './assets/images/example-plugin.jpg',\r\n\t\ttitle: 'Example Plugin',\r\n\t\tdescription: 'This is an example description. See how this looks with short text.',\r\n\t\tversion: 'v1.0.0',\r\n\t},\r\n}"
+                },
+                {
+                    "name": "Installed",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/plugin-card/plugin-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<PluginCardComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Settings',\r\n\t\tisInstalled: true,\r\n\t\tdescription:\r\n\t\t\t'This is a very long description that need multiple lines and should be truncated correctly. It would be nice if there is a \"View More\" button if the text is really this long.',\r\n\t\tversion: 'v1.0.0',\r\n\t},\r\n}"
+                },
+                {
+                    "name": "LongDescription",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/plugin-card/plugin-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<PluginCardComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\timageSource: './assets/images/example-plugin.jpg',\r\n\t\ttitle: 'Example Plugin',\r\n\t\tdescription:\r\n\t\t\t'This is a very long description that need multiple lines and should be truncated correctly. It would be nice if there is a \"View More\" button if the text is really this long.',\r\n\t\tversion: 'v1.0.0',\r\n\t},\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/plugin-card/plugin-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<PluginCardComponent>",
+                    "defaultValue": "{\r\n\ttitle: 'Design System/Organisms/Plugin Card',\r\n\tparameters: {\r\n\t\tlayout: 'fullscreen',\r\n\t},\r\n\tcomponent: PluginCardComponent,\r\n\targTypes: {\r\n\t\tonInstallClick: { action: 'onInstallClick' },\r\n\t\tonUninstallClick: { action: 'onUninstallClick' },\r\n\t},\r\n}"
+                },
+                {
+                    "name": "NoImage",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/plugin-card/plugin-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<PluginCardComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Settings',\r\n\t\tdescription:\r\n\t\t\t'This is a very long description that need multiple lines and should be truncated correctly. It would be nice if there is a \"View More\" button if the text is really this long.',\r\n\t\tversion: 'v1.0.0',\r\n\t},\r\n}"
+                }
+            ],
+            "src/atoms/button/button.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<ButtonComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Button',\r\n\t\tstate: State.Default,\r\n\t},\r\n}"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<ButtonComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Button',\r\n\t\tstate: State.Disabled,\r\n\t},\r\n}"
+                },
+                {
+                    "name": "Icon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<ButtonComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Button',\r\n\t\tstate: State.Default,\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t},\r\n}"
+                },
+                {
+                    "name": "IconDisabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<ButtonComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Button',\r\n\t\tstate: State.Disabled,\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t},\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonComponent>",
+                    "defaultValue": "{\r\n\ttitle: 'Design System/Atoms/Button',\r\n\tcomponent: ButtonComponent,\r\n\targTypes: {\r\n\t\tonClick: { action: 'onClick' },\r\n\t},\r\n}"
+                }
+            ],
+            "src/atoms/icon/icon.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<IconComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\turl: 'assets/icons/dashboard.svg',\r\n\t\tsize: Size.Default,\r\n\t},\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<IconComponent>",
+                    "defaultValue": "{\r\n\ttitle: 'Design System/Atoms/Icon',\r\n\tcomponent: IconComponent,\r\n}"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<IconComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\turl: 'assets/icons/dashboard.svg',\r\n\t\tsize: Size.Small,\r\n\t},\r\n}"
+                }
+            ],
+            "src/organisms/list/list.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/list/list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<ListComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\titems: items,\r\n\t},\r\n}"
+                },
+                {
+                    "name": "items",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/list/list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n\t{ title: 'Dashboard', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t{ title: 'Settings', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t{ title: 'Help', iconUrl: 'assets/icons/dashboard.svg' },\r\n]"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/list/list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ListComponent>",
+                    "defaultValue": "{\r\n\ttitle: 'Design System/Organisms/List',\r\n\tcomponent: ListComponent,\r\n\targTypes: {\r\n\t\tonClick: { action: 'onClick' },\r\n\t},\r\n}"
+                },
+                {
+                    "name": "Selected",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/list/list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<ListComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\titems: items,\r\n\t\tselected: items[0],\r\n\t},\r\n}"
+                }
+            ],
+            "src/molecules/box/box.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/molecules/box/box.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<BoxComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Box',\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t\tstate: State.Default,\r\n\t\tstyle: Style.Default,\r\n\t},\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/molecules/box/box.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<BoxComponent>",
+                    "defaultValue": "{\r\n\ttitle: 'Design System/Molecules/Box',\r\n\tcomponent: BoxComponent,\r\n\targTypes: {\r\n\t\tonClick: { action: 'onClick' },\r\n\t},\r\n}"
+                },
+                {
+                    "name": "Selected",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/molecules/box/box.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<BoxComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Box',\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t\tstate: State.Selected,\r\n\t\tstyle: Style.Default,\r\n\t},\r\n}"
+                },
+                {
+                    "name": "Slim",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/molecules/box/box.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<BoxComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Box',\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t\tstate: State.Default,\r\n\t\tstyle: Style.Slim,\r\n\t},\r\n}"
+                },
+                {
+                    "name": "SlimSelected",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/molecules/box/box.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<BoxComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Box',\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t\tstate: State.Selected,\r\n\t\tstyle: Style.Slim,\r\n\t},\r\n}"
+                }
+            ],
+            "src/templates/master-detail/master-detail.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/templates/master-detail/master-detail.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<MasterDetailComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\titems: [\r\n\t\t\t{ title: 'Dashboard', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t\t{ title: 'Settings', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t\t{ title: 'Help', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t],\r\n\t},\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/templates/master-detail/master-detail.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<MasterDetailComponent>",
+                    "defaultValue": "{\r\n\ttitle: 'Design System/Templates/Master Detail',\r\n\tcomponent: MasterDetailComponent,\r\n}"
+                },
+                {
+                    "name": "Selected",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/templates/master-detail/master-detail.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<MasterDetailComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\titems: [\r\n\t\t\t{ title: 'Dashboard', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t\t{ title: 'Settings', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t\t{ title: 'Help', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t],\r\n\t\tselected: { title: 'Dashboard', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t},\r\n}"
+                }
+            ],
+            ".storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": ".storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\n\tparameters: {\n\t\tcontrols: {\n\t\t\tmatchers: {\n\t\t\t\tcolor: /(background|color)$/i,\n\t\t\t\tdate: /Date$/i,\n\t\t\t},\n\t\t},\n\t},\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": ".storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Icon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "IconDisabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/molecules/box/box.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/molecules/box/box.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/molecules/box/box.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Selected",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/molecules/box/box.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Slim",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/molecules/box/box.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SlimSelected",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/organisms/list/list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/organisms/list/list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "items",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/organisms/list/list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/organisms/list/list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Selected",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/organisms/plugin-card/plugin-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Core",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/organisms/plugin-card/plugin-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/organisms/plugin-card/plugin-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Installed",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/organisms/plugin-card/plugin-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LongDescription",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/organisms/plugin-card/plugin-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/organisms/plugin-card/plugin-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NoImage",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/templates/master-detail/master-detail.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/templates/master-detail/master-detail.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/templates/master-detail/master-detail.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Selected",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

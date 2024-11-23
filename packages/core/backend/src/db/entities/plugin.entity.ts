@@ -7,9 +7,17 @@ export interface SqlPlugin {
 
 	readonly name: string;
 
-	readonly url: string;
+	readonly sourceUrl: string;
+
+	readonly sourceId: string;
+
+	readonly configUrl: string;
+
+	readonly configId: string;
 
 	readonly isInstalled: number;
+
+	readonly isCore: number;
 }
 
 @Entity({ tableName: PLUGIN_TABLE_NAME })
@@ -36,13 +44,45 @@ export class Plugin {
 	 * @example '<url>'
 	 */
 	@Property({ type: 'varchar', nullable: false })
-	public readonly url!: string;
+	public readonly sourceUrl!: string;
+
+	/**
+	 * The id of the bundle storage location
+	 *
+	 * @example '<url>'
+	 */
+	@Property({ type: 'varchar', nullable: false, defaultRaw: 'UUID()' })
+	public readonly sourceId!: string;
+
+	/**
+	 * The url of the plugins config
+	 *
+	 * @example '<url>'
+	 */
+	@Property({ type: 'varchar', nullable: false })
+	public readonly configUrl!: string;
+
+	/**
+	 * The id of the config storage location
+	 *
+	 * @example '<url>'
+	 */
+	@Property({ type: 'varchar', nullable: false, defaultRaw: 'UUID()' })
+	public readonly configId!: string;
 
 	/**
 	 * Whether the plugin is currently installed
 	 *
 	 * @example true
 	 */
-	@Property({ type: 'boolean', nullable: false })
+	@Property({ type: 'boolean', nullable: false, defaultRaw: 'false' })
 	public readonly isInstalled!: boolean;
+
+	/**
+	 * Whether the plugin is part of the core
+	 *
+	 * @example true
+	 */
+	@Property({ type: 'boolean', nullable: false, defaultRaw: 'false' })
+	public readonly isCore!: boolean;
 }

@@ -1,0 +1,65 @@
+:host {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+
+	gap: 4px;
+
+	width: min-content;
+
+	padding: 6px 22px;
+	border-radius: 15px;
+
+	background-color: var(--color-button-primary);
+
+	transition: background-color 0.3s ease;
+
+	&:hover {
+		cursor: pointer;
+
+		background-color: var(--color-button-primary-hover);
+	}
+
+	&.has-icon {
+		padding: 8px 20px;
+		border-radius: 20px;
+
+		> .title {
+			margin-top: 1px;
+		}
+	}
+
+	&.disabled {
+		background-color: var(--color-button-disabled);
+
+		&:hover {
+			cursor: default;
+		}
+
+		> pihub-icon {
+			fill: var(--color-text-on-disabled);
+		}
+
+		> .title {
+			color: var(--color-text-on-disabled);
+		}
+	}
+
+	> pihub-icon {
+		fill: var(--color-text-on-primary);
+
+		transition: fill 0.3s ease;
+	}
+
+	> .title {
+		font-family: 'Satoshi-Medium';
+		font-size: 14px;
+
+		color: var(--color-text-on-primary);
+
+		transition: color 0.3s ease;
+
+		user-select: none;
+	}
+}

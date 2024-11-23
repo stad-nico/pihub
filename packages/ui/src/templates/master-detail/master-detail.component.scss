@@ -1,0 +1,26 @@
+:host {
+	display: flex;
+	flex-direction: row;
+
+	> pihub-list {
+		width: 40%;
+
+		padding: 26px;
+
+		border-radius: 26px 0 0 26px;
+
+		background-color: var(--color-background-primary);
+	}
+
+	> .detail {
+		width: 60%;
+
+		padding: 26px;
+
+		border-radius: 0 26px 26px 0;
+
+		background-color: var(--color-background-tertiary);
+
+		overflow-y: scroll;
+	}
+}

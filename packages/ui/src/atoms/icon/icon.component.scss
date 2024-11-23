@@ -1,0 +1,16 @@
+:host {
+	display: block;
+
+	width: 24px;
+	height: 24px;
+
+	&.extra-small {
+		width: 18px;
+		height: 18px;
+	}
+
+	&.small {
+		width: 20px;
+		height: 20px;
+	}
+}

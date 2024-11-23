@@ -1,7 +1,0 @@
-@for (item of category.items; track item.title) {
-<ui-plugin-navigation-item
-	(onClick)="onClickHandler($event)"
-	[item]="item"
-	[isSelected]="lastSelected?.category === category.title && lastSelected?.item === item.title"
-></ui-plugin-navigation-item>
-}

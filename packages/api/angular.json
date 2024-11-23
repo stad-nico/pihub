@@ -5,8 +5,8 @@
 	"projects": {
 		"api": {
 			"projectType": "library",
-			"root": ".",
-			"sourceRoot": "src",
+			"root": "",
+			"sourceRoot": ".",
 			"prefix": "api",
 			"architect": {
 				"build": {

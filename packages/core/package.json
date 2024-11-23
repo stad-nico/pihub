@@ -1,4 +1,7 @@
 {
 	"name": "@pihub/core",
-	"version": "0.0.0"
+	"version": "0.0.0",
+	"dependencies": {
+		"@pihub/common": "file:.yalc/@pihub/common"
+	}
 }

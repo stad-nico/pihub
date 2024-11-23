@@ -18,11 +18,9 @@
 		"moduleResolution": "bundler",
 		"importHelpers": true,
 		"target": "ES2022",
+		"baseUrl": ".",
 		"module": "ES2022",
 		"lib": ["ES2022", "dom"],
-		"paths": {
-			"generated": ["./generated"]
-		}
 	},
 	"angularCompilerOptions": {
 		"enableI18nLegacyMessageIdFormat": false,

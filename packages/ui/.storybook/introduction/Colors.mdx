@@ -1,0 +1,96 @@
+import { ColorPalette, ColorItem } from '@storybook/blocks';
+import { DesignTokenDocBlock } from 'storybook-design-token';
+
+# Colors
+
+## Palette
+
+<ColorPalette>
+	<ColorItem title="Primary" subtitle="Blue" colors={{ primary: '#3b62ed' }} />
+	<ColorItem title="Secondary" subtitle="Lightblue" colors={{ secondary: '#eff2fd' }} />
+	<ColorItem title="Neutral" colors={{ neutral: '#fbfcfe' }} />
+</ColorPalette>
+
+## Ramps
+
+<ColorPalette>
+	<ColorItem
+		title="Primary"
+		subtitle="Blue"
+		colors={{
+			100: '#0e1739',
+			200: '#1d3077',
+			300: '#2c48af',
+			400: '#3b62ed',
+			500: '#5778ef',
+			600: '#738ef2',
+			700: '#8fa5f4',
+			800: '#abbbf7',
+			900: '#c7d2f9',
+			1000: '#e3e8fc',
+		}}
+	/>
+
+    <ColorItem
+    	title="Secondary"
+    	subtitle="Lightblue"
+    	colors={{
+    		100: '#2b304a',
+    		200: '#4d5575',
+    		300: '#6d78a2',
+    		400: '#8e9ecc',
+    		500: '#a6b5e3',
+    		600: '#d1dafa',
+    		700: '#dee4fc',
+    		800: '#edf0fd',
+    		900: '#f6f7fe',
+    		1000: '#fbfcfe',
+    	}}
+    />
+
+    <ColorItem
+    	title="Neutral"
+    	colors={{
+    		100: '#2b304a',
+    		200: '#4d5575',
+    		300: '#6d78a2',
+    		400: '#8e9dcc',
+    		500: '#bcc8ef',
+    		600: '#d1dafa',
+    		700: '#dee4fc',
+    		800: '#edf0fd',
+    		900: '#f6f7fe',
+    		1000: "#fbfcfe"
+    	}}
+    />
+
+</ColorPalette>
+
+# Tokens
+
+## Button
+
+<ColorPalette>
+	<ColorItem title="button.primary" subtitle="--color-button-primary" colors={{ 'button.primary': 'var(--color-primary-500)' }} />
+	<ColorItem title="button.primary.hover" subtitle="--color-button-primary-hover" colors={{ 'button.primary.hover': 'var(--color-primary-400)' }} />
+	<ColorItem title="button.disabled" subtitle="--color-button-disabled" colors={{ 'button.disabled': 'var(--color-neutral-800)' }} />
+</ColorPalette>
+
+## Text
+
+<ColorPalette>
+	<ColorItem title="text.primary" subtitle="--color-text-primary" colors={{ 'text.primary': 'var(--color-neutral-300)' }} />
+	<ColorItem title="text.secondary" subtitle="--color-text-secondary" colors={{ 'text.secondary': 'var(--color-neutral-500)' }} />
+	<ColorItem title="text.tertiary" subtitle="--color-text-tertiary" colors={{ 'text.tertiary': 'var(--color-neutral-700)' }} />
+	<ColorItem title="text.highlight" subtitle="--color-text-highlight" colors={{ 'text.highlight': 'var(--color-primary-500)' }} />
+	<ColorItem title="text.on-primary" subtitle="--color-text-on-primary" colors={{ 'text.on-primary': 'var(--color-secondary-1000)' }} />
+	<ColorItem title="text.on-disabled" subtitle="--color-text-on-disabled" colors={{ 'text.on-disabled': 'var(--color-neutral-500)' }} />
+</ColorPalette>
+
+## Background
+
+<ColorPalette>
+	<ColorItem title="background.primary" subtitle="--color-background-primary" colors={{ 'background.primary': 'var(--color-neutral-1000)' }} />
+	<ColorItem title="background.secondary" subtitle="--color-background-secondary" colors={{ 'background.secondary': 'var(--color-neutral-900)' }} />
+	<ColorItem title="background.tertiary" subtitle="--color-background-tertiary" colors={{ 'background.tertiary': 'var(--color-neutral-800)' }} />
+</ColorPalette>

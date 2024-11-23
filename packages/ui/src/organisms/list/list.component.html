@@ -1,0 +1,3 @@
+@for (item of items; track item) {
+<pihub-box (onClick)="onClick.emit(item)" [title]="item.title" [iconUrl]="item.iconUrl" [state]="selected === item ? boxState.Selected : boxState.Default"></pihub-box>
+}

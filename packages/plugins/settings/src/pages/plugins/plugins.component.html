@@ -1,0 +1,11 @@
+@for (plugin of plugins; track plugin.id) {
+<pihub-plugin-card
+	[title]="plugin.name"
+	[isInstalled]="plugin.isInstalled"
+	[isCore]="plugin.isCore"
+	[description]="'Example'"
+	[version]="'v0.0.0'"
+	(onUninstallClick)="uninstallPlugin(plugin.id)"
+	(onInstallClick)="installPlugin(plugin.id)"
+></pihub-plugin-card>
+}

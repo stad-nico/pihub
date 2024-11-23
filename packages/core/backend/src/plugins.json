@@ -1,17 +1,18 @@
 [
 	{
-		"name": "ui",
-		"url": "http://localhost:5500/packages/plugins/ui/dist/fesm2022/pihub-plugin-ui.mjs",
-		"isInstalled": true
-	},
-	{
+		"id": "cbda4bd2-9916-11ef-9889-4534336667d0",
 		"name": "settings",
-		"url": "http://localhost:5500/packages/plugins/settings/dist/fesm2022/pihub-plugin-settings.mjs",
-		"isInstalled": true
+		"sourceUrl": "http://localhost:5500/packages/plugins/settings/dist/fesm2022/pihub-plugin-settings.mjs",
+		"configUrl": "http://localhost:5500/packages/plugins/settings/dist/fesm2022/pihub-plugin-settings-config.mjs",
+		"isInstalled": true,
+		"isCore": true
 	},
 	{
+		"id": "cbda4bd2-9916-11ef-9889-2534336667d0",
 		"name": "dashboard",
-		"url": "http://localhost:5500/packages/plugins/dashboard/dist/fesm2022/pihub-plugin-dashboard.mjs",
-		"isInstalled": true
+		"sourceUrl": "http://localhost:5500/packages/plugins/dashboard/dist/fesm2022/pihub-plugin-dashboard.mjs",
+		"configUrl": "http://localhost:5500/packages/plugins/dashboard/dist/fesm2022/pihub-plugin-dashboard-config.mjs",
+		"isInstalled": false,
+		"isCore": false
 	}
 ]

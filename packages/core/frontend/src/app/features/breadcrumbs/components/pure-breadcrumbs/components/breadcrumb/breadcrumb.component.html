@@ -1,0 +1,5 @@
+@if (breadcrumb.id !== 0) {
+<pihub-icon [url]="'./assets/icons/arrow-right.svg'"></pihub-icon>
+}
+
+<p (click)="onClick.emit(breadcrumb.id)">{{ breadcrumb.title }}</p>

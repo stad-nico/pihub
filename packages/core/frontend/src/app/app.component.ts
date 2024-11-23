@@ -1,36 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Store } from '@ngxs/store';
-import { PiHubApi } from '@pihub/api';
-import { Plugin } from 'generated';
-import { Observable } from 'rxjs';
-import { PiHubApiImpl } from './api';
-import { AppState, FetchPlugins, Initialize, LoadPlugins } from './store';
+
+import { CoreComponent } from 'src/app/core/core.component';
 
 @Component({
 	selector: 'app',
 	standalone: true,
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss',
-	imports: [RouterOutlet],
-	providers: [{ provide: PiHubApi, useClass: PiHubApiImpl }],
+	imports: [CoreComponent],
 })
-export class AppComponent {
-	private readonly store: Store;
-
-	private readonly installedPlugins$: Observable<Array<Plugin>>;
-
-	constructor(store: Store) {
-		this.store = store;
-
-		this.installedPlugins$ = this.store.select(AppState.selectInstalledPlugins);
-	}
-
-	ngOnInit() {
-		this.store.dispatch(new FetchPlugins());
-
-		this.installedPlugins$.subscribe((plugins) => {
-			this.store.dispatch(new LoadPlugins(plugins.map((plugin) => plugin.id))).subscribe(() => this.store.dispatch(new Initialize()));
-		});
-	}
-}
+export class AppComponent {}

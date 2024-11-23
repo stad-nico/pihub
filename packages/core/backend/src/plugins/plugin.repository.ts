@@ -5,7 +5,7 @@ import { Plugin, PLUGIN_TABLE_NAME, SqlPlugin } from 'src/db/entities/plugin.ent
 @Injectable()
 export class PluginRepository {
 	public async selectAll(entityManager: EntityManager): Promise<Array<Plugin>> {
-		const query = `SELECT id, name, url, isInstalled FROM ${PLUGIN_TABLE_NAME}`;
+		const query = `SELECT id, name, sourceUrl, sourceId, configUrl, configId, isInstalled, isCore FROM ${PLUGIN_TABLE_NAME}`;
 
 		const [rows] = await entityManager.getKnex().raw<[SqlPlugin[]]>(query);
 
@@ -13,16 +13,16 @@ export class PluginRepository {
 			return [];
 		}
 
-		return rows.map((row) => ({ ...row, isInstalled: Boolean(row.isInstalled) }));
+		return rows.map((row) => ({ ...row, isInstalled: Boolean(row.isInstalled), isCore: Boolean(row.isCore) }));
 	}
 
 	public async select(entityManager: EntityManager, id: string): Promise<Plugin | null> {
-		const query = `SELECT id, name, url, isInstalled FROM ${PLUGIN_TABLE_NAME} WHERE id = :id`;
+		const query = `SELECT id, name, sourceUrl, sourceId, configUrl, configId, isInstalled, isCore FROM ${PLUGIN_TABLE_NAME} WHERE id = :id`;
 		const params = { id: id };
 
 		const [rows] = await entityManager.getKnex().raw<[SqlPlugin[]]>(query, params);
 
-		const plugin: Plugin | undefined = rows?.map((row) => ({ ...row, isInstalled: Boolean(row.isInstalled) }))[0];
+		const plugin: Plugin | undefined = rows?.map((row) => ({ ...row, isInstalled: Boolean(row.isInstalled), isCore: Boolean(row.isCore) }))[0];
 
 		if (!plugin) {
 			return null;

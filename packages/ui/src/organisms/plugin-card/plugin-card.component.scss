@@ -1,0 +1,164 @@
+:host {
+	display: block;
+
+	border-radius: 20px;
+
+	background-color: var(--color-background-primary);
+
+	height: 100%;
+	width: 100%;
+
+	overflow: hidden;
+
+	> header {
+		height: 40%;
+		width: 100%;
+
+		background-color: red;
+
+		> img {
+			width: 100%;
+			height: 100%;
+
+			object-fit: cover;
+		}
+
+		> .placeholder {
+			width: 100%;
+			height: 100%;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			background-color: var(--color-neutral-700);
+
+			> .title {
+				font-size: 2.4rem;
+				font-family: 'Satoshi-Black';
+
+				text-align: center;
+
+				color: var(--color-text-tertiary);
+
+				user-select: none;
+			}
+		}
+	}
+
+	> main {
+		height: 60%;
+
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		flex-direction: column;
+		gap: 6px;
+
+		padding: 16px 20px 20px 20px;
+
+		> header {
+			width: 100%;
+
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+
+			padding-right: 2px;
+
+			> .title {
+				&:hover {
+					cursor: pointer;
+
+					color: var(--color-text-highlight);
+				}
+
+				width: min-content;
+
+				font-size: 18px;
+				font-family: 'Satoshi-Bold';
+
+				white-space: nowrap;
+
+				user-select: none;
+
+				color: var(--color-text-primary);
+
+				margin-bottom: 1px;
+			}
+
+			> .installed {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start;
+				gap: 2px;
+
+				margin-left: auto;
+
+				> svg {
+					width: 18px;
+					height: 18px;
+
+					fill: var(--color-success-400);
+
+					margin-top: 1px;
+				}
+
+				> p {
+					font-family: 'Satoshi-Regular';
+					font-size: 0.9rem;
+
+					color: var(--color-success-400);
+
+					user-select: none;
+				}
+			}
+		}
+
+		> main {
+			> .description {
+				display: -webkit-box;
+
+				width: 100%;
+
+				font-size: 14px;
+				font-family: 'Satoshi-Regular';
+
+				-webkit-line-clamp: 4;
+				-webkit-box-orient: vertical;
+
+				overflow: hidden;
+
+				user-select: none;
+
+				color: var(--color-text-secondary);
+			}
+		}
+
+		> footer {
+			margin-top: auto;
+
+			width: 100%;
+
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-start;
+			flex-direction: row;
+
+			> .version {
+				font-size: 14px;
+				font-family: 'Satoshi-Regular';
+
+				user-select: none;
+
+				color: var(--color-text-tertiary);
+			}
+
+			> pihub-button {
+				margin-left: auto;
+			}
+		}
+	}
+}

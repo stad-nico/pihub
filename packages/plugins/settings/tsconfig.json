@@ -15,15 +15,10 @@
 		"experimentalDecorators": true,
 		"moduleResolution": "bundler",
 		"importHelpers": true,
+		"baseUrl": ".",
 		"target": "ES2022",
 		"module": "ES2022",
-		"lib": ["ES2022", "dom"],
-    "paths": {
-      "settings": [
-        "./dist/settings"
-      ],
-			"ui": ["./dist/ui"]
-		}
+		"lib": ["ES2022", "dom"]
 	},
 	"angularCompilerOptions": {
 		"enableI18nLegacyMessageIdFormat": false,

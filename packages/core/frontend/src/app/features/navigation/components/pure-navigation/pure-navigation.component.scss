@@ -1,0 +1,85 @@
+:host {
+	display: flex;
+
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+
+	height: 100%;
+	width: 100%;
+
+	background-color: var(--color-background-primary);
+
+	overflow: hidden;
+
+	> header {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 10px;
+
+		width: 100%;
+
+		padding: 30px 10% 15px 10%;
+
+		> .icon {
+			&:hover {
+				cursor: pointer;
+			}
+
+			width: 48px;
+			height: 48px;
+		}
+
+		> .title {
+			&:hover {
+				cursor: pointer;
+
+				color: var(--color-text-highlight);
+			}
+
+			font-family: 'Satoshi-Bold';
+			font-size: 1.2rem;
+
+			user-select: none;
+
+			transition: color 0.2s ease;
+		}
+	}
+
+	> main {
+		position: relative;
+
+		display: flex;
+
+		flex-grow: 1;
+		flex-shrink: 1;
+
+		width: 100%;
+
+		padding: 0 20px;
+
+		> pihub-list {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	> footer {
+		width: 100%;
+
+		margin-top: auto;
+		padding: 15px 0 15px 0;
+
+		> :is(.author, .version) {
+			font-family: 'Satoshi-Medium';
+			font-size: 0.9rem;
+
+			color: var(--color-text-tertiary);
+
+			margin: 0 10% 0 10%;
+
+			user-select: none;
+		}
+	}
+}
