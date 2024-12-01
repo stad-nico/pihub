@@ -1,0 +1,63 @@
+:host {
+	display: block;
+
+	position: relative;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&.on {
+		> .background {
+			background-color: var(--color-button-primary);
+		}
+
+		> .handle {
+			left: 95%;
+			translate: -100% -50%;
+		}
+	}
+
+	&.off {
+		> .background {
+			background-color: var(--color-secondary-300);
+		}
+	}
+
+	&.disabled {
+		> .background {
+			background-color: var(--color-neutral-900);
+		}
+	}
+
+	> .background {
+		width: 100%;
+
+		aspect-ratio: 2 / 1;
+
+		border-radius: 999px;
+
+		display: flex;
+
+		padding: 5%;
+
+		transition: background-color 0.3s ease;
+	}
+
+	> .handle {
+		position: absolute;
+		top: 50%;
+		left: 5%;
+
+		height: 80%;
+		aspect-ratio: 1 / 1;
+
+		background-color: var(--color-neutral-1000);
+
+		border-radius: 50%;
+
+		translate: 0 -50%;
+
+		transition: 0.3s ease;
+	}
+}

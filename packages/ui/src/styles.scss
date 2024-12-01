@@ -65,7 +65,7 @@ body,
 	--color-primary-300: hsl(227, 60%, 43%);
 	--color-primary-400: hsl(226.9, 83.2%, 58%);
 	--color-primary-500: hsl(227, 82.6%, 63.9%);
-	--color-primary-600: hsl(227.2, 83%, 70%);
+	--color-primary-600: hwb(227 45% 5%);
 	--color-primary-700: hsl(226.9, 82.1%, 75.9%);
 	--color-primary-800: hsl(227.4, 82.6%, 82%);
 	--color-primary-900: hsl(226.8, 80.6%, 87.8%);
@@ -82,7 +82,7 @@ body,
 	--color-secondary-900: hsl(228, 55.6%, 98.2%);
 	--color-secondary-1000: hsl(220, 60%, 99%);
 
-	--color-neutral-100: hsl(230.3, 26.5%, 22.9%);
+	--color-neutral-100: hsl(230, 26%, 23%);
 	--color-neutral-200: hsl(228, 20.6%, 38%);
 	--color-neutral-300: hsl(227.5, 22.2%, 53.1%);
 	--color-neutral-400: hsl(224.5, 37.8%, 67.8%);
@@ -134,9 +134,9 @@ body,
 	--color-button-disabled: var(--color-neutral-800);
 
 	--color-text-primary: var(--color-neutral-200);
-	--color-text-secondary: var(--color-neutral-400);
+	--color-text-secondary: var(--color-neutral-300);
 	--color-text-tertiary: var(--color-neutral-600);
-	--color-text-highlight: var(--color-primary-500);
+	--color-text-highlight: var(--color-primary-400);
 	--color-text-on-primary: var(--color-secondary-1000);
 	--color-text-on-disabled: var(--color-neutral-500);
 
@@ -144,7 +144,6 @@ body,
 	--color-background-secondary: var(--color-neutral-900);
 	--color-background-tertiary: var(--color-neutral-800);
 
-	--color-container: var(--color-secondary-900);
 	--color-container-hover: var(--color-secondary-600);
 	--color-container-selected: var(--color-secondary-200);
 	--color-container-selected-hover: var(--color-primary-900);
