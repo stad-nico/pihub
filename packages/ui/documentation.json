@@ -11,6 +11,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Checked",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/checkbox/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<CheckboxComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\tstate: State.Checked,\r\n\t},\r\n}"
+            },
+            {
                 "name": "Core",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -44,6 +54,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/molecules/box/box.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<BoxComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Box',\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t\tstate: State.Default,\r\n\t\tstyle: Style.Default,\r\n\t},\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/organisms/list/list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -64,16 +84,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/molecules/box/box.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "StoryObj<BoxComponent>",
-                "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Box',\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t\tstate: State.Default,\r\n\t\tstyle: Style.Default,\r\n\t},\r\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/templates/master-detail/master-detail.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -89,6 +99,26 @@
                 "deprecationMessage": "",
                 "type": "StoryObj<ButtonComponent>",
                 "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Button',\r\n\t\tstate: State.Disabled,\r\n\t},\r\n}"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/checkbox/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<CheckboxComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\tstate: State.Disabled,\r\n\t},\r\n}"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<ToggleComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\tstate: State.Disabled,\r\n\t},\r\n}"
             },
             {
                 "name": "Icon",
@@ -154,11 +184,41 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/atoms/checkbox/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CheckboxComponent>",
+                "defaultValue": "{\r\n\ttitle: 'Design System/Atoms/Checkbox',\r\n\tcomponent: CheckboxComponent,\r\n\targTypes: {\r\n\t\tonClick: { action: 'onClick' },\r\n\t},\r\n\trender: (args) => ({\r\n\t\tprops: args,\r\n\t\ttemplate: `\r\n\t\t\t<div style='width: 100px; height: 100px; resize: both; overflow: hidden'>\r\n\t\t\t\t<pihub-checkbox ${argsToTemplate(args)}></pihub-checkbox>\r\n\t\t\t</div>\r\n\t\t`,\r\n\t}),\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/atoms/icon/icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<IconComponent>",
                 "defaultValue": "{\r\n\ttitle: 'Design System/Atoms/Icon',\r\n\tcomponent: IconComponent,\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ToggleComponent>",
+                "defaultValue": "{\r\n\ttitle: 'Design System/Atoms/Toggle',\r\n\tcomponent: ToggleComponent,\r\n\targTypes: {\r\n\t\tonToggle: { action: 'onToggle' },\r\n\t},\r\n\trender: (args) => ({\r\n\t\tprops: args,\r\n\t\ttemplate: `\r\n\t\t\t<div style='width: 100px; resize: both; overflow: hidden'>\r\n\t\t\t\t<pihub-toggle ${argsToTemplate(args)}></pihub-toggle>\r\n\t\t\t</div>\r\n\t\t`,\r\n\t}),\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/molecules/box/box.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<BoxComponent>",
+                "defaultValue": "{\r\n\ttitle: 'Design System/Molecules/Box',\r\n\tcomponent: BoxComponent,\r\n\targTypes: {\r\n\t\tonClick: { action: 'onClick' },\r\n\t},\r\n}"
             },
             {
                 "name": "meta",
@@ -178,17 +238,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<PluginCardComponent>",
-                "defaultValue": "{\r\n\ttitle: 'Design System/Organisms/Plugin Card',\r\n\tparameters: {\r\n\t\tlayout: 'fullscreen',\r\n\t},\r\n\tcomponent: PluginCardComponent,\r\n\targTypes: {\r\n\t\tonInstallClick: { action: 'onInstallClick' },\r\n\t\tonUninstallClick: { action: 'onUninstallClick' },\r\n\t},\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/molecules/box/box.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<BoxComponent>",
-                "defaultValue": "{\r\n\ttitle: 'Design System/Molecules/Box',\r\n\tcomponent: BoxComponent,\r\n\targTypes: {\r\n\t\tonClick: { action: 'onClick' },\r\n\t},\r\n}"
+                "defaultValue": "{\r\n\ttitle: 'Design System/Organisms/Plugin Card',\r\n\tcomponent: PluginCardComponent,\r\n\targTypes: {\r\n\t\tonInstallClick: { action: 'onInstallClick' },\r\n\t\tonUninstallClick: { action: 'onUninstallClick' },\r\n\t},\r\n}"
             },
             {
                 "name": "meta",
@@ -211,6 +261,26 @@
                 "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Settings',\r\n\t\tdescription:\r\n\t\t\t'This is a very long description that need multiple lines and should be truncated correctly. It would be nice if there is a \"View More\" button if the text is really this long.',\r\n\t\tversion: 'v1.0.0',\r\n\t},\r\n}"
             },
             {
+                "name": "Off",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<ToggleComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\tstate: State.Off,\r\n\t},\r\n}"
+            },
+            {
+                "name": "On",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<ToggleComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\tstate: State.On,\r\n\t},\r\n}"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -224,21 +294,21 @@
                 "name": "Selected",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/organisms/list/list.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "StoryObj<ListComponent>",
-                "defaultValue": "{\r\n\targs: {\r\n\t\titems: items,\r\n\t\tselected: items[0],\r\n\t},\r\n}"
-            },
-            {
-                "name": "Selected",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/molecules/box/box.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryObj<BoxComponent>",
                 "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Box',\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t\tstate: State.Selected,\r\n\t\tstyle: Style.Default,\r\n\t},\r\n}"
+            },
+            {
+                "name": "Selected",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/organisms/list/list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<ListComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\titems: items,\r\n\t\tselected: items[0],\r\n\t},\r\n}"
             },
             {
                 "name": "Selected",
@@ -279,12 +349,64 @@
                 "deprecationMessage": "",
                 "type": "StoryObj<IconComponent>",
                 "defaultValue": "{\r\n\targs: {\r\n\t\turl: 'assets/icons/dashboard.svg',\r\n\t\tsize: Size.Small,\r\n\t},\r\n}"
+            },
+            {
+                "name": "Unchecked",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/atoms/checkbox/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<CheckboxComponent>",
+                "defaultValue": "{\r\n\targs: {\r\n\t\tstate: State.Unchecked,\r\n\t},\r\n}"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "src/atoms/checkbox/checkbox.stories.ts": [
+                {
+                    "name": "Checked",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/checkbox/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<CheckboxComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\tstate: State.Checked,\r\n\t},\r\n}"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/checkbox/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<CheckboxComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\tstate: State.Disabled,\r\n\t},\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/checkbox/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CheckboxComponent>",
+                    "defaultValue": "{\r\n\ttitle: 'Design System/Atoms/Checkbox',\r\n\tcomponent: CheckboxComponent,\r\n\targTypes: {\r\n\t\tonClick: { action: 'onClick' },\r\n\t},\r\n\trender: (args) => ({\r\n\t\tprops: args,\r\n\t\ttemplate: `\r\n\t\t\t<div style='width: 100px; height: 100px; resize: both; overflow: hidden'>\r\n\t\t\t\t<pihub-checkbox ${argsToTemplate(args)}></pihub-checkbox>\r\n\t\t\t</div>\r\n\t\t`,\r\n\t}),\r\n}"
+                },
+                {
+                    "name": "Unchecked",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/checkbox/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<CheckboxComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\tstate: State.Unchecked,\r\n\t},\r\n}"
+                }
+            ],
             "src/organisms/plugin-card/plugin-card.stories.ts": [
                 {
                     "name": "Core",
@@ -334,7 +456,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<PluginCardComponent>",
-                    "defaultValue": "{\r\n\ttitle: 'Design System/Organisms/Plugin Card',\r\n\tparameters: {\r\n\t\tlayout: 'fullscreen',\r\n\t},\r\n\tcomponent: PluginCardComponent,\r\n\targTypes: {\r\n\t\tonInstallClick: { action: 'onInstallClick' },\r\n\t\tonUninstallClick: { action: 'onUninstallClick' },\r\n\t},\r\n}"
+                    "defaultValue": "{\r\n\ttitle: 'Design System/Organisms/Plugin Card',\r\n\tcomponent: PluginCardComponent,\r\n\targTypes: {\r\n\t\tonInstallClick: { action: 'onInstallClick' },\r\n\t\tonUninstallClick: { action: 'onUninstallClick' },\r\n\t},\r\n}"
                 },
                 {
                     "name": "NoImage",
@@ -431,48 +553,6 @@
                     "defaultValue": "{\r\n\targs: {\r\n\t\turl: 'assets/icons/dashboard.svg',\r\n\t\tsize: Size.Small,\r\n\t},\r\n}"
                 }
             ],
-            "src/organisms/list/list.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/organisms/list/list.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "StoryObj<ListComponent>",
-                    "defaultValue": "{\r\n\targs: {\r\n\t\titems: items,\r\n\t},\r\n}"
-                },
-                {
-                    "name": "items",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/organisms/list/list.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\r\n\t{ title: 'Dashboard', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t{ title: 'Settings', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t{ title: 'Help', iconUrl: 'assets/icons/dashboard.svg' },\r\n]"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/organisms/list/list.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ListComponent>",
-                    "defaultValue": "{\r\n\ttitle: 'Design System/Organisms/List',\r\n\tcomponent: ListComponent,\r\n\targTypes: {\r\n\t\tonClick: { action: 'onClick' },\r\n\t},\r\n}"
-                },
-                {
-                    "name": "Selected",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/organisms/list/list.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "StoryObj<ListComponent>",
-                    "defaultValue": "{\r\n\targs: {\r\n\t\titems: items,\r\n\t\tselected: items[0],\r\n\t},\r\n}"
-                }
-            ],
             "src/molecules/box/box.stories.ts": [
                 {
                     "name": "Default",
@@ -525,6 +605,48 @@
                     "defaultValue": "{\r\n\targs: {\r\n\t\ttitle: 'Box',\r\n\t\ticonUrl: 'assets/icons/dashboard.svg',\r\n\t\tstate: State.Selected,\r\n\t\tstyle: Style.Slim,\r\n\t},\r\n}"
                 }
             ],
+            "src/organisms/list/list.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/list/list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<ListComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\titems: items,\r\n\t},\r\n}"
+                },
+                {
+                    "name": "items",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/list/list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n\t{ title: 'Dashboard', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t{ title: 'Settings', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t{ title: 'Help', iconUrl: 'assets/icons/dashboard.svg' },\r\n]"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/list/list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ListComponent>",
+                    "defaultValue": "{\r\n\ttitle: 'Design System/Organisms/List',\r\n\tcomponent: ListComponent,\r\n\targTypes: {\r\n\t\tonClick: { action: 'onClick' },\r\n\t},\r\n}"
+                },
+                {
+                    "name": "Selected",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/organisms/list/list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<ListComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\titems: items,\r\n\t\tselected: items[0],\r\n\t},\r\n}"
+                }
+            ],
             "src/templates/master-detail/master-detail.stories.ts": [
                 {
                     "name": "Default",
@@ -555,6 +677,48 @@
                     "deprecationMessage": "",
                     "type": "StoryObj<MasterDetailComponent>",
                     "defaultValue": "{\r\n\targs: {\r\n\t\titems: [\r\n\t\t\t{ title: 'Dashboard', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t\t{ title: 'Settings', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t\t{ title: 'Help', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t\t],\r\n\t\tselected: { title: 'Dashboard', iconUrl: 'assets/icons/dashboard.svg' },\r\n\t},\r\n}"
+                }
+            ],
+            "src/atoms/toggle/toggle.stories.ts": [
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<ToggleComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\tstate: State.Disabled,\r\n\t},\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ToggleComponent>",
+                    "defaultValue": "{\r\n\ttitle: 'Design System/Atoms/Toggle',\r\n\tcomponent: ToggleComponent,\r\n\targTypes: {\r\n\t\tonToggle: { action: 'onToggle' },\r\n\t},\r\n\trender: (args) => ({\r\n\t\tprops: args,\r\n\t\ttemplate: `\r\n\t\t\t<div style='width: 100px; resize: both; overflow: hidden'>\r\n\t\t\t\t<pihub-toggle ${argsToTemplate(args)}></pihub-toggle>\r\n\t\t\t</div>\r\n\t\t`,\r\n\t}),\r\n}"
+                },
+                {
+                    "name": "Off",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<ToggleComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\tstate: State.Off,\r\n\t},\r\n}"
+                },
+                {
+                    "name": "On",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/atoms/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<ToggleComponent>",
+                    "defaultValue": "{\r\n\targs: {\r\n\t\tstate: State.On,\r\n\t},\r\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -640,6 +804,46 @@
                 "status": "low"
             },
             {
+                "filePath": "src/atoms/checkbox/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Checked",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/checkbox/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/checkbox/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/checkbox/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Unchecked",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/atoms/icon/icon.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -665,6 +869,46 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Off",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/atoms/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "On",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

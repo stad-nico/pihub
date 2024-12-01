@@ -28,18 +28,6 @@
 
 	&.selected {
 		background-color: var(--color-container-selected);
-
-		&:hover {
-			background-color: var(--color-container-selected-hover);
-		}
-
-		> .title {
-			color: var(--color-text-highlight);
-		}
-
-		> pihub-icon {
-			fill: var(--color-text-highlight);
-		}
 	}
 
 	&.slim {
@@ -56,7 +44,7 @@
 		font-family: 'Satoshi-Medium';
 		font-size: 16px;
 
-		color: var(--color-text-primary);
+		color: var(--color-text-secondary);
 
 		transition: color 0.3s ease;
 
@@ -64,7 +52,7 @@
 	}
 
 	> pihub-icon {
-		fill: var(--color-text-primary);
+		fill: var(--color-text-secondary);
 
 		transition: fill 0.3s ease;
 	}

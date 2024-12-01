@@ -25,13 +25,13 @@ export class ButtonComponent {
 	@Input()
 	public iconUrl: string | undefined = undefined;
 
+	@Output()
+	public onClick: EventEmitter<void> = new EventEmitter();
+
 	@HostBinding('class')
 	public get className() {
 		return [this.state, this.iconUrl ? 'has-icon' : null].join(' ');
 	}
-
-	@Output()
-	public onClick: EventEmitter<void> = new EventEmitter();
 
 	@HostListener('click')
 	public onClickHandler() {
