@@ -14,5 +14,13 @@
 		"configUrl": "http://localhost:5500/packages/plugins/dashboard/dist/fesm2022/pihub-plugin-dashboard-config.mjs",
 		"isInstalled": false,
 		"isCore": false
+	},
+	{
+		"id": "cbda4ba2-9916-11ef-9889-2534336667d0",
+		"name": "cloud",
+		"sourceUrl": "http://localhost:5500/packages/plugins/cloud/dist/fesm2022/pihub-plugin-cloud.mjs",
+		"configUrl": "http://localhost:5500/packages/plugins/cloud/dist/fesm2022/pihub-plugin-cloud-config.mjs",
+		"isInstalled": false,
+		"isCore": false
 	}
 ]
