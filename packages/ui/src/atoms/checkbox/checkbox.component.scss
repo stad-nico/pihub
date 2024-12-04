@@ -5,7 +5,7 @@
 
 	height: 100%;
 
-	transition: all 0.3s;
+	transition: all 0.2s;
 
 	&:hover {
 		cursor: pointer;
@@ -50,7 +50,7 @@
 			border: 1px solid black;
 			border-radius: 20%;
 
-			transition: all 0.3s ease;
+			transition: all 0.2s ease;
 
 			> svg {
 				width: 100%;
@@ -58,7 +58,7 @@
 
 				scale: 1.3;
 
-				transition: all 0.3s ease;
+				transition: all 0.2s ease;
 			}
 		}
 	}

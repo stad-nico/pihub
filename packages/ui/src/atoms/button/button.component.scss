@@ -13,7 +13,7 @@
 
 	background-color: var(--color-button-primary);
 
-	transition: background-color 0.3s ease;
+	transition: background-color 0.2s ease;
 
 	&:hover {
 		cursor: pointer;
@@ -49,7 +49,7 @@
 	> pihub-icon {
 		fill: var(--color-text-on-primary);
 
-		transition: fill 0.3s ease;
+		transition: fill 0.2s ease;
 	}
 
 	> .title {
@@ -58,7 +58,7 @@
 
 		color: var(--color-text-on-primary);
 
-		transition: color 0.3s ease;
+		transition: color 0.2s ease;
 
 		user-select: none;
 	}

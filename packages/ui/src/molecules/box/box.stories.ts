@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import { type Meta, type StoryObj } from '@storybook/angular';
 import { BoxComponent, State, Style } from 'src/molecules/box/box.component';
 
 const meta: Meta<BoxComponent> = {
