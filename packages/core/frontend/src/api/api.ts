@@ -32,8 +32,12 @@ export class RouteApiImpl implements RouteApi {
 		this.routesService = routesService;
 	}
 
-	appendChildRoute(route: Route): void {
+	public appendChildRoute(route: Route): void {
 		this.routesService.appendChildRoute(this.config.name, route);
+	}
+
+	public hasChildRoute(path: string): boolean {
+		return this.routesService.hasChildRoute(this.config.name, path);
 	}
 }
 
@@ -136,6 +140,16 @@ export class RoutesService {
 		this.routes.set(pluginId, pluginRoute);
 
 		this.applyRoutes();
+	}
+
+	public hasChildRoute(pluginId: string, path: string) {
+		const pluginRoute = this.routes.get(pluginId);
+
+		if (!pluginRoute?.children) {
+			return false;
+		}
+
+		return pluginRoute.children?.map((route) => route.path).includes(path);
 	}
 
 	private applyRoutes() {

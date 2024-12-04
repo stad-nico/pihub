@@ -23,6 +23,8 @@ export interface PiHubApi {
 
 export interface RouteApi {
 	appendChildRoute(route: Route): void;
+
+	hasChildRoute(path: string): boolean;
 }
 
 export interface PluginApi {
