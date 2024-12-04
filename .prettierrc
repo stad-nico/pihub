@@ -3,5 +3,14 @@
 	"singleAttributePerLine": false,
 	"tabWidth": 4,
 	"useTabs": true,
-	"singleQuote": true
+	"singleQuote": true,
+	"overrides": [
+		{
+			"files": "**/*.html",
+			"options": {
+				"printWidth": 120,
+				"parser": "angular"
+			}
+		}
+	]
 }
