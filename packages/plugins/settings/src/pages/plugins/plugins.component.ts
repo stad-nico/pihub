@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PiHubApi } from '@pihub/api';
-import { Plugin } from '@pihub/common';
+import { Plugin, StringService } from '@pihub/common';
 import { PluginCardComponent } from '@pihub/ui';
 import { Observable } from 'rxjs';
 
@@ -34,5 +34,9 @@ export class PluginsComponent {
 
 	public uninstallPlugin(pluginId: string) {
 		this.api.plugins.uninstallPlugin(pluginId);
+	}
+
+	public toSpacedPascalCase(input: string) {
+		return StringService.toSpacedPascalCase(input);
 	}
 }
